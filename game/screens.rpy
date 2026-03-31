@@ -1138,6 +1138,81 @@ style help_label_text:
 ## Additional screens
 ################################################################################
 
+#########################
+#inventory/hotbar screen#
+#########################
+
+default inventory_slots = [
+    None,
+    None,
+    None,
+    None,
+    None
+]
+init python:
+    def collect_hotbar_item(item_id, icon_path):
+        # Do not add duplicate items to the hotbar.
+        for slot in inventory_slots:
+            if slot and slot["id"] == item_id:
+                return
+
+        for i, slot in enumerate(inventory_slots):
+            if slot is None:
+                inventory_slots[i] = {"id": item_id, "icon": icon_path}
+                return
+
+        inventory_slots.append({"id": item_id, "icon": icon_path})
+
+screen item_hotbar_icons():
+    zorder 120
+
+    frame:
+        xalign 1.0
+        yalign 0.5
+        xoffset -20
+        background "#111a"
+        padding (10, 10)
+
+        vbox:
+            spacing 8
+            text "Items" size 24
+
+            for i, slot in enumerate(inventory_slots):
+                fixed:
+                    xsize 72
+                    ysize 72
+
+                    imagebutton:
+                        idle "gui/slot_idle.png"
+                        hover "gui/slot_hover.png"
+                        xpos 0
+                        ypos 0
+                        action [SetVariable("selected_slot", i), If(slot and slot["id"] == "owner note", Show("owner_note_popup"))]
+
+                    if slot:
+                        add slot["icon"] xalign 0.5 yalign 0.5 xysize (60, 60)
+
+screen owner_note_popup():
+    modal True
+    zorder 200
+
+    frame:
+        xalign 0.5
+        yalign 0.5
+        xmaximum 1100
+        background "#111d"
+        padding (30, 20)
+
+        vbox:
+            spacing 14
+            text "Camp Owner Note" size 38 color "#e89331"
+            add "owner note" xalign 0.5 yalign 0.5 xysize (520, 520)
+            text "Welcome to Camp Getaway! We hope you enjoy your stay. Please note that cabins 3-4 are off limits due to maintenance. If you need anything, my place is a 20 minute walk from here. - Camp Owner"
+            
+
+            textbutton "Close":
+                xalign 1.0
+                action Hide("owner_note_popup")
 
 ## Confirm screen ##############################################################
 ##

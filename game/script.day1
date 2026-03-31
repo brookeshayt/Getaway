@@ -1,0 +1,248 @@
+﻿# The script of the game goes in this file.
+
+# Declare characters used by this game. The color argument colorizes the
+# name of the character.
+
+define p = Character("Player", color="#000000")
+define z = Character("Zalea", color="#dc57bb")
+define e = Character("Ezra", color="#9248c6")
+define m = Character("Mavis", color="#e18849")
+define n = Character("Nash", color="#d64545")
+define f = Character("Farren", color="#55cbd3")
+define j = Character("Jade", color="#5acf5a")
+define c = Character("Cole", color="#306330")
+
+
+
+##############################
+#bunkmate selection variables#
+##############################
+default selected_slot = -1
+default bunkmate_count = 0
+default selected_bunkmates = []
+
+
+# The game starts here.
+label start:
+
+    # Show a background. This uses a placeholder by default, but you can
+    # add a file (named either "bg room.png" or "bg room.jpg") to the
+    # images directory to show it.
+
+    scene car on road
+    with fade
+
+    show jade at Transform(zoom=0.5)
+    with dissolve
+    j "How long till we get there?" 
+    hide jade
+
+    show mavis at Transform(zoom=0.5)
+    with dissolve
+    m "Ermm. I’d say about 15 minutes?"
+    hide mavis
+   
+    # This shows a character sprite. A placeholder is used, but you can
+    # replace it by adding a file named "zalea happy.png" to the images
+    # directory.
+
+    show jade at Transform(zoom=0.5)
+    with dissolve
+    "Jade scoffs and looks out the window"
+    hide jade
+
+    "Mavis rolls her eyes and turns up the music"
+    
+    scene black
+    with fade
+
+    scene camp entrance
+    with fade
+    
+    show mavis at Transform(zoom=0.5)
+    with dissolve
+    m "Mavis hits the brakes and parks the orange van" 
+    "Alright. We're here."
+    hide mavis
+
+    show jade at Transform(zoom=0.5)
+    with dissolve
+    j "Jade gestures with two hands in the air and a sarcastic tone" 
+    "Yippee."
+    hide jade
+
+    "Mavis gets out to grab her bags and everyone else follows suit. Ezra walks up to the camp entrance and looks around"
+    
+    show ezra at Transform(zoom=0.5)
+    with dissolve
+    e "I found a note left by the camp owner, wanna see the note?"
+
+    menu:
+        "Sure, show me the note.":
+            jump shownote
+        "No thanks, I don't like to read.":
+            jump nonote
+
+    label shownote:
+        $ shownote = True
+        "Ezra pulls out the note and shows it to you, it reads: “Welcome to Camp Getaway! We hope you enjoy your stay. Please note that cabins 3-4 are off limits due to maintenance. If you need anything, my place is a 20 minute walk from here. -Camp Owner”"
+        show owner note at Transform(zoom=0.5, xalign=0.5, yalign=0.5)
+        with dissolve
+
+        "Maybe you should keep the note, just in case you need it later. It will be stored in your hotbar."
+        hide owner note
+        hide ezra
+
+        show screen item_hotbar_icons
+        $ collect_hotbar_item("owner note", "images/icons/owner note.png")
+        "Look at that, a handy dandy hotbar! You can click on the note to read it again, or you can click on it later if you forget what it says."
+        
+        $ bunkmate_count = 0
+        $ selected_bunkmates = []
+        "Now its time to pick your bunkmates. You can choose up to 3 bunkees"
+        jump pickabunkee
+
+    label nonote:
+        $ nonote = True
+        "Ezra shrugs and puts the note back in his pocket"
+        hide ezra
+
+        "Everyones standing outside the entrance waiting to enter, you can’t help but feel a little uneasy about the note. You wonder what it says."
+        show bunkmates
+        with fade
+
+        $ bunkmate_count = 0
+        $ selected_bunkmates = []
+        "Now its time to pick your bunkmates. You can choose up to 3 bunkees"
+        jump pickabunkee
+
+
+    label pickabunkee:
+        if bunkmate_count >= 3:
+            jump bunkmate_done
+
+        "Click to learn more about each character. [3 - bunkmate_count] picks left."
+        menu:
+            "Room with Mavis?" if "Mavis" not in selected_bunkmates:
+                jump mavisbio
+            "Room with Jade?" if "Jade" not in selected_bunkmates:
+                jump jadebio
+            "Room with Farren?" if "Farren" not in selected_bunkmates:
+                jump farrenbio
+            "Room with Cole?" if "Cole" not in selected_bunkmates:
+                jump colebio
+            "Room with Nash?" if "Nash" not in selected_bunkmates:
+                jump nashbio
+            "Room with Ezra?" if "Ezra" not in selected_bunkmates:
+                jump ezrabio
+            "Room with Zalea?" if "Zalea" not in selected_bunkmates:
+                jump zaleabio
+             
+    label mavisbio:
+        show mavisbio at Transform(zoom=0.5, xalign=0.5, yalign=0.5)
+        with dissolve
+        
+        menu:
+            "Pick Mavis":
+                $ selected_bunkmates.append("Mavis")
+                $ bunkmate_count += 1
+                "Great! You'll room with Mavis. [3 - bunkmate_count] picks left."
+                if bunkmate_count >= 3:
+                    jump bunkmate_done
+                jump pickabunkee
+            "Don't pick Mavis":
+                jump pickabunkee
+
+    label jadebio:
+        show jadebio at Transform(zoom=0.5, xalign=0.5, yalign=0.5)
+        with dissolve
+        menu:
+            "Pick Jade":
+                $ selected_bunkmates.append("Jade")
+                $ bunkmate_count += 1
+                "Great! You'll room with Jade. [3 - bunkmate_count] picks left."
+                if bunkmate_count >= 3:
+                    jump bunkmate_done
+                jump pickabunkee
+            "Don't pick Jade":
+                jump pickabunkee
+
+    label farrenbio:
+        show farrenbio at Transform(zoom=0.5, xalign=0.5, yalign=0.5)
+        with dissolve
+        menu:
+            "Pick Farren":
+                $ selected_bunkmates.append("Farren")
+                $ bunkmate_count += 1
+                "Great! You'll room with Farren. [3 - bunkmate_count] picks left."
+                if bunkmate_count >= 3:
+                    jump bunkmate_done
+                jump pickabunkee
+            "Don't pick Farren":
+                jump pickabunkee
+
+    label colebio:
+        show colebio at Transform(zoom=0.5, xalign=0.5, yalign=0.5)
+        with dissolve
+        menu:
+            "Pick Cole":
+                $ selected_bunkmates.append("Cole")
+                $ bunkmate_count += 1
+                "Great! You'll room with Cole. [3 - bunkmate_count] picks left."
+                if bunkmate_count >= 3:
+                    jump bunkmate_done
+                jump pickabunkee
+            "Don't pick Cole":
+                jump pickabunkee
+
+    label nashbio:
+        show nashbio at Transform(zoom=0.5, xalign=0.5, yalign=0.5)
+        with dissolve
+        menu:
+            "Pick Nash":
+                $ selected_bunkmates.append("Nash")
+                $ bunkmate_count += 1
+                "Great! You'll room with Nash. [3 - bunkmate_count] picks left."
+                if bunkmate_count >= 3:
+                    jump bunkmate_done
+                jump pickabunkee
+            "Don't pick Nash":
+                jump pickabunkee
+
+    label ezrabio:
+        show ezrabio at Transform(zoom=0.5, xalign=0.5, yalign=0.5)
+        with dissolve
+        menu:
+            "Pick Ezra (and Zalea - THEY COME AS A PACKAGE DEAL)":
+                $ selected_bunkmates.extend(["Ezra", "Zalea"])
+                $ bunkmate_count += 2
+                "Great! You'll room with Ezra and Zalea. [3 - bunkmate_count] picks left."
+                if bunkmate_count >= 3:
+                    jump bunkmate_done
+                jump pickabunkee
+            "Don't pick Ezra":
+                jump pickabunkee
+
+    label zaleabio:
+        show zaleabio at Transform(zoom=0.5, xalign=0.5, yalign=0.5)
+        with dissolve
+        menu:
+            "Pick Zalea (and Ezra - THEY COME AS A PACKAGE DEAL)":
+                $ selected_bunkmates.extend(["Zalea", "Ezra"])
+                $ bunkmate_count += 2
+                "Great! You'll room with Zalea and Ezra. [3 - bunkmate_count] picks left."
+                if bunkmate_count >= 3:
+                    jump bunkmate_done
+                jump pickabunkee
+            "Don't pick Zalea":
+                jump pickabunkee
+
+    label bunkmate_done:
+        "Your bunkmates are [', '.join(selected_bunkmates)]."
+
+
+    scene cabin morning
+
+    
+    # This ends the game.
+    return
