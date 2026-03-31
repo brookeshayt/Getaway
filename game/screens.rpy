@@ -261,7 +261,9 @@ screen quick_menu():
 init python:
     config.overlay_screens.append("quick_menu")
 
-default quick_menu = True
+init python:
+    if not hasattr(store, "quick_menu"):
+        store.quick_menu = True
 
 style quick_menu is hbox
 style quick_button is default
@@ -1138,9 +1140,44 @@ style help_label_text:
 ## Additional screens
 ################################################################################
 
-#########################
-#inventory/hotbar screen#
-#########################
+##################################
+# Choice Screen - bunkmates
+##################################
+default use_custom_choice = False
+
+screen choice(items):
+    style_prefix "choice"
+
+    if use_custom_choice:
+        vbox:
+            xpos 960 ypos 250  # Custom position for this section
+            spacing gui.choice_spacing
+            for i in items:
+                textbutton i.caption action i.action
+    else:
+        vbox:
+            xalign 0.5 yalign 0.5  # Default centered
+            spacing gui.choice_spacing
+            for i in items:
+                textbutton i.caption action i.action
+
+
+##################################
+#inventory/hotbar screen 
+##################################
+init python:
+    def collect_hotbar_item(item_id, icon_path):
+        # Do not add duplicate items to the hotbar.
+        for slot in inventory_slots:
+            if slot and slot["id"] == item_id:
+                return
+        
+        for i, slot in enumerate(inventory_slots):
+            if slot is None:
+                inventory_slots[i] = {"id": item_id, "icon": icon_path}
+                return
+
+        inventory_slots.append({"id": item_id, "icon": icon_path})
 
 default inventory_slots = [
     None,
@@ -1149,19 +1186,6 @@ default inventory_slots = [
     None,
     None
 ]
-init python:
-    def collect_hotbar_item(item_id, icon_path):
-        # Do not add duplicate items to the hotbar.
-        for slot in inventory_slots:
-            if slot and slot["id"] == item_id:
-                return
-
-        for i, slot in enumerate(inventory_slots):
-            if slot is None:
-                inventory_slots[i] = {"id": item_id, "icon": icon_path}
-                return
-
-        inventory_slots.append({"id": item_id, "icon": icon_path})
 
 screen item_hotbar_icons():
     zorder 120
@@ -1187,10 +1211,16 @@ screen item_hotbar_icons():
                         hover "gui/slot_hover.png"
                         xpos 0
                         ypos 0
-                        action [SetVariable("selected_slot", i), If(slot and slot["id"] == "owner note", Show("owner_note_popup"))]
+                        action [
+                            SetVariable("selected_slot", i),
+                            If(slot and slot["id"] == "owner note", Show("owner_note_popup")),
+                            If(slot and slot["id"] == "bracelet", Show("bracelet_popup"))
+                    ]
 
                     if slot:
                         add slot["icon"] xalign 0.5 yalign 0.5 xysize (60, 60)
+
+    
 
 screen owner_note_popup():
     modal True
@@ -1208,11 +1238,31 @@ screen owner_note_popup():
             text "Camp Owner Note" size 38 color "#e89331"
             add "owner note" xalign 0.5 yalign 0.5 xysize (520, 520)
             text "Welcome to Camp Getaway! We hope you enjoy your stay. Please note that cabins 3-4 are off limits due to maintenance. If you need anything, my place is a 20 minute walk from here. - Camp Owner"
-            
 
             textbutton "Close":
                 xalign 1.0
                 action Hide("owner_note_popup")
+
+screen bracelet_popup():
+    modal True
+    zorder 200
+
+    frame:
+        xalign 0.5
+        yalign 0.5
+        xmaximum 1100
+        background "#111d"
+        padding (30, 20)
+
+        vbox:
+            spacing 14
+            text "Bracelet" size 38 color "#047C0E"
+            add "bracelet" xalign 0.5 yalign 0.5 xysize (520, 520)
+            text "A green bracelet was found on the ground, It looks to be held together by fine string and beads."
+
+            textbutton "Close":
+                xalign 1.0
+                action Hide("bracelet_popup")
 
 ## Confirm screen ##############################################################
 ##
