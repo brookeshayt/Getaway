@@ -101,35 +101,79 @@ e " well the owner said-"
 hide ezra
 show cole
 c "I’m sure if we find Nash’s tools we can get the van fixed!"
+hide cole 
+show nash
 n "I don’t know I mean I could try but the issues seem far more severe than a bit of tinkering."
+show zalea
 z "you’re the car guy Nash so I guess we should trust your judgement."
+hide nash
+hide zalea
+show cole
 c "speaking of Nash’s tools I can’t seem to find my journal either"
+hide cole
+show zalea
 z "And my hair flower is also missing."
+hide zalea
+show mavis
 m "My keys are also still, missing unless you still have them Nash."
+show nash
 n "Right yeah sorry, here you go…"
 m "Thanks, not that it means much considering we’re still stranded"
+hide nash
+hide mavis
+show ezra
 e "right… so whose missing what exactly? I’m missing my sunglasses"
+hide ezra 
+show nash
 n "Tools"
+hide nash
+show zalea
 z "My hair clip."
+hide zalea
+show cole
 c "m-my journal but I can look for that on my own…"
+hide cole
+show ezra
 e "Farren? You missing anything"
+show farren
+hide ezra
 f "(Points at face aggressively)"
+show nash
 n "What does that mean? your missing your face? wait where's your mask?"
 f "(Sighs exasperated)"
 n "Ohhhh- that’s what your missing."
 f "(Nods)"
+hide nash
+hide farren
+show ezra
 e "[player_name] are you missing anything?"
 p "No I’m not"
+e "alright"
+hide ezra
+show mavis
 m "I was but we’ve found my keys. No thanks to Nash."
+hide mavis
+show nash
 n "Hey!"
+hide nash
+show cole
 c "looks like we’re stuck here a bit longer then…"
+show zalea
 z "I guess..you don’t seem all to worried Cole"
 c "Me? I’m sure we’ll figure it out, we’ve survived this long… and now we know the van is broken so we won’t crash"
+hide zalea
+show ezra
 e "Hm"
+hide ezra
 c "Plus, I really wanna find my journal it’s really important.."
+show zalea
 z "Do you need help looking for it?"
 c "NO!!- I mean I’m sure I can manage you guys have your own stuff to look for"
+hide zalea 
+hide cole
+show mavis
 m "I guess we better get searching then.."
+hide mavis.
 
 p "Do you remember where you had your sunglasses last?
 e "Not really I think I set them on my end table last night? But they were gone this morning…"
