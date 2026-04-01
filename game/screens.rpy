@@ -1214,7 +1214,8 @@ screen item_hotbar_icons():
                         action [
                             SetVariable("selected_slot", i),
                             If(slot and slot["id"] == "owner note", Show("owner_note_popup")),
-                            If(slot and slot["id"] == "bracelet", Show("bracelet_popup"))
+                            If(slot and slot["id"] == "bracelet", Show("bracelet_popup")),
+                            If(slot and slot["id"] == "pill bottle", Show("pill_bottle_popup"))
                     ]
 
                     if slot:
@@ -1263,6 +1264,27 @@ screen bracelet_popup():
             textbutton "Close":
                 xalign 1.0
                 action Hide("bracelet_popup")
+
+screen pill_bottle_popup():
+    modal True
+    zorder 200
+
+    frame:
+        xalign 0.5
+        yalign 0.5
+        xmaximum 1100
+        background "#111d"
+        padding (30, 20)
+
+        vbox:
+            spacing 14
+            text "Pill Bottle" size 38 color "#047C0E"
+            add "pill bottle" xalign 0.5 yalign 0.5 xysize (520, 520)
+            text "Looks to be a blue pill bottle with the name scratched out?"
+
+            textbutton "Close":
+                xalign 1.0
+                action Hide("pill_bottle_popup")             
 
 ## Confirm screen ##############################################################
 ##
