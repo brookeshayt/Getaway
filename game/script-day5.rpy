@@ -128,6 +128,47 @@ f "(Mimicks is a sleeping pose)"
 z "Same here, I had it when I went to bed and when I woke up it was gone. No idea where it went."
 p "I’ll keep looking."
 
+n "I told you Mavis I can’t fix it here!"
+m "I spent my hard earned money on this car I refuse to believe it’s done for!"
+n "If I knew where my tools were then I’d at least try to fix the breaks but I don’t so I can’t!"
+m "Whatever I’m gonna go finish packing"
+n "HEY WAIT- Mavis-"
+n "Oh hey player sorry can’t talk right now..You find my tools yet?"
+p "No not yet sorry Nash."
+n "No? That’s fine I’m sure we’ll find them."
+
+p "Hey Cole did you find your journal?"
+c "Uhm No but it’s fine, I don’t need any help!"
+p "you’re sure? I think I might’ve seen it over-"
+c "I SAID ITS FINE! Just leave me alone!"
+p "Okay damn I’ll leave you be!"
+
+
+n "Wait seriously? In a bush?"
+m "Great the tools, literally everything else is missing though! And my Van is still broken!"
+n "You act as if I’m the one who broke it, which I’m not!"
+c "Well you are the Mechanic Nash, what are we supposed to think?"
+e "No offence Cole,  but I don’t Nash has the brains to plan something like this!"
+n "See!? Thank you- hey wait a minute did you just call me dumb?"
+z "You are a little slow sometimes, no offence"
+n "Am not! Mavis tell them I'm not."
+m "I mean..occasionally.."
+n "unbelievable!"
+e "anywayssss why don’t we start gathering all our belongings by the van maybe we’ll find our stuff in the process!"
+n "Yeah whatever, Nash takes his tools and goes to gather his stuff."
+
+"Group gathers belongings in front of the camp sign but still doesn’t find their belongings"
+
+e "seriously? Still nothing?"
+c "maybe it’s a sign we’re supposed to stay..? find out what happened?"
+z "Yeah cause the universe wants us to stay in a camp, YOU invited us too in the middle of no where after one of our friends just died."
+e "Z-"
+c "You mean YOUR friend died, none of us actually liked Jade!"
+z "That’s not true! sure she could be a little mean but-"
+c "Really? She’d been nothing but mean to me, Ezra said it themselves that they didn’t like her."
+e "..."
+"Zalea and Cole start to argue and it starts to get pretty heated."
+"Zalea screams in frustration and Pushes Cole backwards causing him to stumble backwards and drop his bag"
 
 
 
