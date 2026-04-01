@@ -239,32 +239,58 @@ show mavis
 m "I mean..occasionally.."
 hide mavis
 n "unbelievable!"
+show ezra
 e "anywayssss why don’t we start gathering all our belongings by the van maybe we’ll find our stuff in the process!"
+hide ezra
 n "Yeah whatever, Nash takes his tools and goes to gather his stuff."
+hide nash
 
 "Group gathers belongings in front of the camp sign but still doesn’t find their belongings"
 
+show ezra
 e "seriously? Still nothing?"
+hide ezra
+show cole
 c "maybe it’s a sign we’re supposed to stay..? find out what happened?"
+show zalea
 z "Yeah cause the universe wants us to stay in a camp, YOU invited us too in the middle of no where after one of our friends just died."
+hide zalea
+show ezea
 e "Z-"
+hide ezra
 c "You mean YOUR friend died, none of us actually liked Jade!"
+show zalea
 z "That’s not true! sure she could be a little mean but-"
 c "Really? She’d been nothing but mean to me, Ezra said it themselves that they didn’t like her."
+hide zalea 
+show ezra
 e "..."
+hide ezra
+hide cole
+
 "Zalea and Cole start to argue and it starts to get pretty heated."
 "Zalea screams in frustration and Pushes Cole backwards causing him to stumble backwards and drop his bag, Cole scrambles to gather all of his belongings back into his bag."
-
+show ezra
 e "Woah! Calm down both of you"
+hide ezra
+show zalea
 z "He started it!"
+show cole
 c "She pushed me! psycho!"
 z "who the hell are you calling a psycho! I'll show you-"
+hide cole
+hide zalea
 
 "Farren approaches the player looking distressed"
+show farren
 f "(Points at face then at Cole's bag"
 p "what are you doing?"
 f "(sighs frustrated. and goes up to Cole and yanks on his bag trying to pull it open"
+show cole
 c " H-Hey! What the hell Farren!"
+hide cole
+hide farren
+
 "Cole shoves Farren off of him spilling his bag all over the ground revealing all the missing items."
 "Cole's Journal lands open and reveals some very disturbing notes. and details describing that he planned to kill all his friends"
 
