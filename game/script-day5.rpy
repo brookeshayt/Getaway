@@ -119,8 +119,14 @@ z "Do you need help looking for it?"
 c "NO!!- I mean I’m sure I can manage you guys have your own stuff to look for"
 m "I guess we better get searching then.."
 
+p "Do you remember where you had your sunglasses last?
+e "Not really I think I set them on my end table last night? But they were gone this morning…"
+p "alright I’ll keep looking.."
 
-
+p "Where did you guys see your things last"
+f "(Mimicks is a sleeping pose)"
+z "Same here, I had it when I went to bed and when I woke up it was gone. No idea where it went."
+p "I’ll keep looking."
 
 
 
