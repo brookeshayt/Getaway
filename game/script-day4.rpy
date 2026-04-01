@@ -36,7 +36,7 @@ label farren_death:
     e "people don’t just trip and impale themselves on branches Mavis..
     hide ezra shocked sunglasses
     show cole shocked at Left
-    c "I don’t understand how this could even happen…
+    c "I don’t understand how this could even happen…"
     p "You know, I thought I heard something last night. I thought I heard Nash talking to someone outside but I couldn’t make out what they were saying."
     p "I thought I was dreaming, I didn’t think it was real until I woke up and saw him like this."
     p "I couln't even push myself to get out of bed, It was like I was weighted down."
@@ -130,13 +130,13 @@ label ask farren:
     p "You two were pretty close?"
     f "*nods*"
     p "did you hear anything last night? See anything?"
-    f "*shakes head no* 
+    f "*shakes head no*"
     hide farren
     jump extra_dialogue
 
 extra_dialogue:
     show mavis neutral at Left
-    m "I think it's obvious none of us disliked Nash "
+    m "I think it's obvious none of us disliked Nash"
     hide mavis neutral
     show zalea sad flower at Left
     z "Yeah, it’s hard to wrap my head around the fact someone could do something so horrendous."
@@ -190,7 +190,7 @@ label day4_end:
 
     scene black
     with fade
-    "The group splits up while Farren catches Fish. Except he doesn’t come back, it is now dark outside.
+    "The group splits up while Farren catches Fish. Except he doesn’t come back, it is now dark outside."
     scene group_night3_fire
     show mavis neutral at Left
     m "Do you think he’s caught anything by now?"
@@ -214,10 +214,10 @@ label day4_end:
     hide mavis shocked
     show zalea angry flower at Left
     z "Why did we stay!! We should have left by now we should have gone to get help after Jade! Now three of our friends have died."
-    z "THis is your fault COLE! It was your stupid idea to come to this rundown camp in the middle of nowhere! 
+    z "THis is your fault COLE! It was your stupid idea to come to this rundown camp in the middle of nowhere!"
     show cole angry teeth at Left
     c "Hey!! Don’t b-blame me!"
-    c "How was I supposed to know everyone would end up dying! 
+    c "How was I supposed to know everyone would end up dying!"
     hide cole angry teeth
     show ezra angry sunglasses at Left
     e "ENOUGH!"
@@ -256,20 +256,20 @@ label farren_alive:
     with fade
 
     show nash smirk at Left
-    n "(Nash gestures to the group) I haven’t found anything useful have you guys? I’m still half asleep
+    n "(Nash gestures to the group) I haven’t found anything useful have you guys? I’m still half asleep."
     show ezra disgusted sunglasses at Right
-    e "Yeah I don’t think any of you were sober last night…
+    e "Yeah I don’t think any of you were sober last night…"
     n "Now that you mention it, the food did taste a little strange last night…"
     hide nash smirk
     hide ezra disgusted
     show mavis neutral at Left
-    m "I felt really drowsy afterwards..I almost passed out in my chair. "
+    m "I felt really drowsy afterwards..I almost passed out in my chair."
     hide mavis neutral
     show zalea flower at Left
     z "I don’t remember much after I ate dinner…"
     hide zalea flower
     show ezra concerned sunglasses at Left
-    e "…You were pretty out of it too Z. 
+    e "…You were pretty out of it too Z."
     hide ezra concerned sunglasses
     show mavis angry at Left
     m "maybe it was just a coincidence..?"
@@ -317,17 +317,17 @@ label group chat:
     z "I’ve been pretty down on my luck.. I’ve not got anything, sorry Player."
     hide zalea judging flower
     show mavis neutral at Left
-    m "Nothing, but I can’t seem to find my car keys, Cole had them last but he said he put them with my stuff…
+    m "Nothing, but I can’t seem to find my car keys, Cole had them last but he said he put them with my stuff…"
     hide mavis neutral
     show nash frown at Left
-    n "no but my tools seem to be missing out of Mavis’s Van. 
+    n "no but my tools seem to be missing out of Mavis’s Van."
     "You talk to Farren next, but he doesn't same much.. except"
     show farren at Left
     f "(Silent for a moment but then hands you an empty pill bottle with the Name scratched out)"
-    f "It’s a prescription bottle for extremely strong sleeping medication
+    f "It’s a prescription bottle for extremely strong sleeping medication"
     hide farren 
     p "Do you know who takes sleeping meds?"
-    shoe farren at Left
+    show farren at Left
     f "(Shakes head and shrugs)"
     hide farren 
     show cole ng frown
@@ -362,7 +362,7 @@ label meet_up_with_group:
     show nash frown at Left
     n "Okay hang on let’s just think back, what did we all do last night. "
     show ezra concerned sunglasses at Right
-    e "from what I remember.. Nash you cooked. You guys ate, got tired and went to bed and I helped player carry Nash to bed.
+    e "from what I remember.. Nash you cooked. You guys ate, got tired and went to bed and I helped player carry Nash to bed."
     n "Ezra you didn’t eat last night…"
     hide ezra concerned sunglasses
     hide nash frown
@@ -468,7 +468,7 @@ label meet_up_with_group:
     scene black
     with fade
     "SUMMARY"
-    "Did someone tamper with the food if so then who..? 
+    "Did someone tamper with the food if so then who..?"
     "Farren seems to be paying close attention to his surroundings, might be worth talking to him again tomorrow."
     jump day5_start_good
 
