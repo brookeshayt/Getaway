@@ -203,10 +203,13 @@ label okay_variant:
 
 
 label day5_start_good:
-   
+    scene black
+    with fade
+    "Day 5"
 
 
-    jump the_end
+
+
     
 label the_end:
     scene black
