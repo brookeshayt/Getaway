@@ -176,9 +176,34 @@ c "She pushed me! psycho!"
 z "who the hell are you calling a psycho! I'll show you-"
 
 "Farren approaches the player looking distressed"
-f "
+f "(Points at face then at Cole's bag"
+p "what are you doing?"
+f "(sighs frustrated. and goes up to Cole and yanks on his bag trying to pull it open"
+c " H-Hey! What the hell Farren!"
+"Cole shoves Farren off of him spilling his bag all over the ground revealing all the missing items."
+"Cole's Journal lands open and reveals some very disturbing notes. and details describing that he planned to kill all his friends"
 
+show mavis
+m "What the Fuck is that?"
+hide mavis
 
+show ezra
+e "You- You better start explaining yourself!"
+show cole
+c "You weren't Supposed to see that!"
+hide Cole
+show zalea
+z "He has all our stuff!"
+hide zalea
+show cole
+c "This wasn't supposed to happen! you were all supposed to die!"
+hide cole
+
+show nash
+n "Shut up, Freak"
+hide nash
+
+"nash tackles Cole!"
 
 
 
