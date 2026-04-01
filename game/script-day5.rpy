@@ -321,7 +321,8 @@ hide cole
 
 "nash tackles Cole!"
 
-
+"Nash knocks Cole out, They find out that it was Cole who killed Jade and find out that he had planned this entire trip to attempt to kill everyone off"
+"They make their way to the owners Cabin 20 mins away and Cole is arrested and they all make it home safe, (sorry we ran outta time)"
 
 
 
