@@ -171,6 +171,13 @@ e "..."
 "Zalea screams in frustration and Pushes Cole backwards causing him to stumble backwards and drop his bag, Cole scrambles to gather all of his belongings back into his bag."
 
 e "Woah! Calm down both of you"
+z "He started it!"
+c "She pushed me! psycho!"
+z "who the hell are you calling a psycho! I'll show you-"
+
+"Farren approaches the player looking distressed"
+f "
+
 
 
 
