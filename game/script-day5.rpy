@@ -77,8 +77,13 @@ label day5_start_good:
     scene black
     with fade
     "Day 5"
-
-
+m "Hey, has anyone seen my keys? I kind of need them in order to leave.."
+e "No sorry Mavis…I’ll keep an eye out, I can’t find my sunglasses either.."
+n "Oh shoot I forgot I borrowed your keys yesterday sorry Mavis.."
+m "Why'd you have my keys?"
+n " noticed your engine bay was and sure enough it was tampered with.."
+m "what do you mean tampered with?"
+n "The break lines were cut and it looks like more was done but I can’t be sure."
 
 
     
