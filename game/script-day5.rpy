@@ -168,7 +168,11 @@ z "That’s not true! sure she could be a little mean but-"
 c "Really? She’d been nothing but mean to me, Ezra said it themselves that they didn’t like her."
 e "..."
 "Zalea and Cole start to argue and it starts to get pretty heated."
-"Zalea screams in frustration and Pushes Cole backwards causing him to stumble backwards and drop his bag"
+"Zalea screams in frustration and Pushes Cole backwards causing him to stumble backwards and drop his bag, Cole scrambles to gather all of his belongings back into his bag."
+
+e "Woah! Calm down both of you"
+
+
 
 
 
