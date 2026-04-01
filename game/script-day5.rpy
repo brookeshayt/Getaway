@@ -104,6 +104,23 @@ e "Farren? You missing anything"
 f "(Points at face aggressively)"
 n "What does that mean? your missing your face? wait where's your mask?"
 f "(Sighs exasperated)"
+n "Ohhhh- that’s what your missing."
+f "(Nods)"
+e "[player_name] are you missing anything?"
+p "No I’m not"
+m "I was but we’ve found my keys. No thanks to Nash."
+n "Hey!"
+c "looks like we’re stuck here a bit longer then…"
+z "I guess..you don’t seem all to worried Cole"
+c "Me? I’m sure we’ll figure it out, we’ve survived this long… and now we know the van is broken so we won’t crash"
+e "Hm"
+c "Plus, I really wanna find my journal it’s really important.."
+z "Do you need help looking for it?"
+c "NO!!- I mean I’m sure I can manage you guys have your own stuff to look for"
+m "I guess we better get searching then.."
+
+
+
 
 
 
