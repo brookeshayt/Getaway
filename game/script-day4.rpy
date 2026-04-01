@@ -28,19 +28,19 @@ label farren_death:
     show zalea shocked flower at Right
     e "Zalea don’t look."
     z "I think I’m gonna be sick.."
-    "Farren gestures for Zalea to go with him. They both go to sit down inside the cabin.
+    "Farren gestures for Zalea to go with him. They both go to sit down inside the cabin."
     hide zalea shicked flower
-    e "I think this proves it’s not accidental, people don’t just-
+    e "I think this proves it’s not accidental, people don’t just-"
     show mavis sad at Right
-    m "(shaking her head in denial) I already said I don’t want to point fingers..Who knows what if he simply tripped and fell. 
-    e "people don’t just trip and impale themselves on branches Mavis..
+    m "(shaking her head in denial) I already said I don’t want to point fingers..Who knows what if he simply tripped and fell."
+    e "people don’t just trip and impale themselves on branches Mavis.."
     hide ezra shocked sunglasses
     show cole shocked at Left
     c "I don’t understand how this could even happen…"
     p "You know, I thought I heard something last night. I thought I heard Nash talking to someone outside but I couldn’t make out what they were saying."
     p "I thought I was dreaming, I didn’t think it was real until I woke up and saw him like this."
     p "I couln't even push myself to get out of bed, It was like I was weighted down."
-    mide mavis angry
+    hide mavis angry
     show ezra concerned sunglasses at Left
     e "You’re sure..? You didn’t hear anyone else?"
     p "No, I didn't hear anyone else"
@@ -70,13 +70,13 @@ label farren_death:
     c "(looking at Ezra) S-so how do we know you didn’t do it then."
     hide ezra angry sunglasses
     show mavis neutral at Right
-    m "we don’t, and none of us would admit it even if we had… we shouldn’t turn on each other without evidence. 
+    m "we don’t, and none of us would admit it even if we had… we shouldn’t turn on each other without evidence."
     hide cole shocked closed
     show ezra disgusted sunglasses at Left
-    e "whatever, can you guys help me move Nash, as horrifying as this is, we should try and stay rational…
+    e "whatever, can you guys help me move Nash, as horrifying as this is, we should try and stay rational…"
     hide ezra disgusted sunglasses
 
- scene black
+    scene black
     with fade
     "LATER BY THE CABINS"
     with fade
@@ -124,7 +124,7 @@ label ask_cole:
     hide cole glasses neutral
     jump midday_discussion
 
-label ask farren:
+label ask_farren:
     show farren at Left
     f "..."
     p "You two were pretty close?"
@@ -134,7 +134,7 @@ label ask farren:
     hide farren
     jump extra_dialogue
 
-extra_dialogue:
+label extra_dialogue:
     show mavis neutral at Left
     m "I think it's obvious none of us disliked Nash"
     hide mavis neutral
@@ -306,7 +306,7 @@ label farren_alive:
 
             jump group_chat
 
-label group chat: 
+label group_chat: 
     p "Did you see anything while looking around, Ezra?"
     "Maybe you should talk to a few of your friends. You walk up to everyone and ask them if they found anything while looking around."
     show ezra concerned sunglasses at Left

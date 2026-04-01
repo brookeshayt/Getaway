@@ -58,7 +58,7 @@ label day3_start:
     scene group_night2_fire 
     with fade
     "Everyone starts to feel strangely drowsy after dinner and jokes about Nash putting something in the food."
-    "Zalea is leaning on Ezra’s shoulder basically asleep and Ezra is looking concerned at everyone’s drowsy state of mind
+    "Zalea is leaning on Ezra’s shoulder basically asleep and Ezra is looking concerned at everyone’s drowsy state of mind"
     show mavis neutral at Left
     m "Anyone else feel drowsy?"
     hide mavis neutral

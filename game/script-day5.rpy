@@ -6,10 +6,10 @@ label day5_start_variants:
     "The choice is yours... choose wisely"
 
     menu:
-    "Spend the morning searching the camp":
-        jump okay_variant
-    "Spend the morning packing to leave":
-        jump bad_variant
+        "Spend the morning searching the camp":
+            jump okay_variant
+        "Spend the morning packing to leave":
+            jump bad_variant
 
 label bad_variant:
     scene cabin_day  
@@ -21,7 +21,7 @@ label bad_variant:
     c "Because we might get arrested without proper proof."
     z "you’ve seemed pretty adamant to stay this entire time Cole"
     c "well pardon me for trying to make sure we don’t go to prison!"
-    z "What makes you so sure we’d even get blamed in the first place! "
+    z "What makes you so sure we’d even get blamed in the first place!"
     hide zalea frustrated
     hide cole ng frown
     show ezra concerned at Left
@@ -123,6 +123,8 @@ label bad_variant:
     e "Haha yeah, Z mentioned missing her hair flower earlier too and I’m missing my sunglasses…"
     m "Strange.. I’ll make sure to do a thorough search before we head out..."
     e "Good idea. I’m gonna go check on Z."
+
+    scene bunkbeds
     m "I’ll go with you… she’s been gone for a while,"
     hide ezra concerned
     hide mavis neutral
@@ -139,6 +141,8 @@ label bad_variant:
     hide ezra concerned
     show mavis neutral at Left
     m "Okay, she couldn't have gone far... let's spread out and look for her."
+
+    scene broken_cabin
     hide mavis
     "The group splits up to search for Zalea."
     "While investigating the camp, [player_name] watches Ezra go check the abandoned cabins, you see a hand lying onn the ground ouside the door"
@@ -170,6 +174,9 @@ label bad_variant:
     show cole pupils ng smirk at Left
     c "Leaving? Already? You’re just gonna abandon your friends?"
     hide cole pupils ng smirk
+    jump van_crash
+
+label van_crash:
     "Mavis grabs [player_name] and books it to the car."
     "You and Mavis hop in the van and she stomps on the gas, you make it about a yard out before..."
 
@@ -178,7 +185,7 @@ label bad_variant:
     "HE FUCKED WITH THE VAN!! I CAN'T STOP."
     "Screeeeeeeech. BOOM."
 
-    scene blurry crash
+    scene blurry_crash
     with fade
     "You look to you side and see Mavis unconscious, blood pouring from her head"
     "You are barely conscious, all you hear is a faint whitsle in the background."
@@ -208,72 +215,11 @@ label okay_variant:
         "Stick together and walk to the owners cabin":
             jump day5_start_good
         "Send mavis in the van to go get help":
-            jump van scene
-
-label van_scene:
-    "Mavis hops in the van and she stomps on the gas, she makes it about a yard out before..."
-    scene black
-    with fade
-    "HE FUCKED WITH THE VAN!! I CAN'T STOP."
-    "Screeeeeeeech. BOOM."
-    scene blurry crash
-    with fade
-
-    "Mavis is unconscious, blood is pouring from her head. Ezra and "
-
+            jump van_crash
 
 
 label day5_start_good:
-    m "Hey, has anyone seen my keys? I kind of need them in order to leave.."
-    e "No sorry Mavis…I’ll keep an eye out, I can’t find my sunglasses either.."
-    n "Oh shoot I forgot I borrowed your keys yesterday sorry Mavis.."
-    m "Why'd you have my keys?"
-    n " noticed your engine bay was and sure enough it was tampered with.."
-    m "what do you mean tampered with?"
-    n "The break lines were cut and it looks like more was done but I can’t be sure."
-    e "well that’s just fantastic. Can you fix it?"
-    n "I would have tried ..but my tools are missing outta Mavis’ car"
-    m "So we’re just stuck here then?"
-    e " well the owner said-"
-    c "I’m sure if we find Nash’s tools we can get the van fixed!"
-    n "I don’t know I mean I could try but the issues seem far more severe than a bit of tinkering."
-    z "you’re the car guy Nash so I guess we should trust your judgement."
-    c "speaking of Nash’s tools I can’t seem to find my journal either"
-    z "And my hair flower is also missing."
-    m "My keys are also still, missing unless you still have them Nash."
-    n "Right yeah sorry, here you go…"
-    m "Thanks, not that it means much considering we’re still stranded"
-    e "right… so whose missing what exactly? I’m missing my sunglasses"
-    n "Tools"
-    z "My hair clip."
-    c "m-my journal but I can look for that on my own…"
-    e "Farren? You missing anything"
-    f "(Points at face aggressively)"
-    n "What does that mean? your missing your face? wait where's your mask?"
-    f "(Sighs exasperated)"
-    n "Ohhhh- that’s what your missing."
-    f "(Nods)"
-    e "[player_name] are you missing anything?"
-    p "No I’m not"
-    m "I was but we’ve found my keys. No thanks to Nash."
-    n "Hey!"
-    c "looks like we’re stuck here a bit longer then…"
-    z "I guess..you don’t seem all to worried Cole"
-    c "Me? I’m sure we’ll figure it out, we’ve survived this long… and now we know the van is broken so we won’t crash"
-    e "Hm"
-    c "Plus, I really wanna find my journal it’s really important.."
-    z "Do you need help looking for it?"
-    c "NO!!- I mean I’m sure I can manage you guys have your own stuff to look for"
-    m "I guess we better get searching then.."
-
-    p "Do you remember where you had your sunglasses last?"
-    e "Not really I think I set them on my end table last night? But they were gone this morning…"
-    p "alright I’ll keep looking.."
-    p "Where did you guys see your things last"
-    f "(Mimicks is a sleeping pose)"
-    z "Same here, I had it when I went to bed and when I woke up it was gone. No idea where it went."
-    p "I’ll keep looking."
-
+    
     
 label the_end:
     scene black

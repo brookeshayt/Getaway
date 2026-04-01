@@ -386,7 +386,7 @@ label day2_end:
     "Mavis comes back holding a bag"
     m "Z, you know the most about makeup and Jade, why don't you check if anything is off?"
     show zalea judging flower at Right
-    "Zalea takes a peek inside the bag
+    "Zalea takes a peek inside the bag"
     z "Well her eyeliner isn’t there, she used it every day so it wouldn’t make sense if she left it behind."
     m "I didn't see anything else by her bag. But how could it have been tampered with?"
     hide zalea judging flower
