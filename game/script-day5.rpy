@@ -175,40 +175,69 @@ show mavis
 m "I guess we better get searching then.."
 hide mavis.
 
+"Search the camp and talk to everyone."
+
+show ezra
 p "Do you remember where you had your sunglasses last?
 e "Not really I think I set them on my end table last night? But they were gone this morning…"
 p "alright I’ll keep looking.."
+hide ezra
 
+
+show zalea
+show farren
 p "Where did you guys see your things last"
 f "(Mimicks is a sleeping pose)"
 z "Same here, I had it when I went to bed and when I woke up it was gone. No idea where it went."
 p "I’ll keep looking."
+hide farren
+hide zalea
 
+show nash
+show mavis
 n "I told you Mavis I can’t fix it here!"
 m "I spent my hard earned money on this car I refuse to believe it’s done for!"
 n "If I knew where my tools were then I’d at least try to fix the breaks but I don’t so I can’t!"
-m "Whatever I’m gonna go finish packing"
+m "Whatever I’m gonna go finish packing!"
+hide mavis
 n "HEY WAIT- Mavis-"
 n "Oh hey player sorry can’t talk right now..You find my tools yet?"
 p "No not yet sorry Nash."
 n "No? That’s fine I’m sure we’ll find them."
+hide nash
 
+show cole
 p "Hey Cole did you find your journal?"
+show cole
 c "Uhm No but it’s fine, I don’t need any help!"
 p "you’re sure? I think I might’ve seen it over-"
+show cole
 c "I SAID ITS FINE! Just leave me alone!"
 p "Okay damn I’ll leave you be!"
+hide cole
 
-
+show nash
 n "Wait seriously? In a bush?"
+show mavis
 m "Great the tools, literally everything else is missing though! And my Van is still broken!"
 n "You act as if I’m the one who broke it, which I’m not!"
+hide mavis
+hide nash
+show cole
 c "Well you are the Mechanic Nash, what are we supposed to think?"
+show ezra
 e "No offence Cole,  but I don’t Nash has the brains to plan something like this!"
+hide ezra
+hide cole
+show nash
 n "See!? Thank you- hey wait a minute did you just call me dumb?"
+show zalea
 z "You are a little slow sometimes, no offence"
 n "Am not! Mavis tell them I'm not."
+hide zalea 
+show mavis
 m "I mean..occasionally.."
+hide mavis
 n "unbelievable!"
 e "anywayssss why don’t we start gathering all our belongings by the van maybe we’ll find our stuff in the process!"
 n "Yeah whatever, Nash takes his tools and goes to gather his stuff."
