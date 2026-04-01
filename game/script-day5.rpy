@@ -84,9 +84,30 @@ m "Why'd you have my keys?"
 n " noticed your engine bay was and sure enough it was tampered with.."
 m "what do you mean tampered with?"
 n "The break lines were cut and it looks like more was done but I can’t be sure."
+e "well that’s just fantastic. Can you fix it?"
+n "I would have tried ..but my tools are missing outta Mavis’ car"
+m "So we’re just stuck here then?"
+e " well the owner said-"
+c "I’m sure if we find Nash’s tools we can get the van fixed!"
+n "I don’t know I mean I could try but the issues seem far more severe than a bit of tinkering."
+z "you’re the car guy Nash so I guess we should trust your judgement."
+c "speaking of Nash’s tools I can’t seem to find my journal either"
+z "And my hair flower is also missing."
+m "My keys are also still, missing unless you still have them Nash."
+n "Right yeah sorry, here you go…"
+m "Thanks, not that it means much considering we’re still stranded"
+e "right… so whose missing what exactly? I’m missing my sunglasses"
+n "Tools"
+z "My hair clip."
+c "m-my journal but I can look for that on my own…"
+e "Farren? You missing anything"
+f "(Points at face aggressively)"
+n "What does that mean? your missing your face? wait where's your mask?"
+f "(Sighs exasperated)"
 
 
-    
+
+
 label the_end:
     "The End"
     $ renpy.pause(hard=True)
