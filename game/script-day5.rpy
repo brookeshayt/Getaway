@@ -219,7 +219,8 @@ label okay_variant:
 
 
 label day5_start_good:
-
+    scene cabin_day
+    with fade
     show mavis
     m "Hey, has anyone seen my keys? I kind of need them in order to leave.."
     show ezra
@@ -317,68 +318,86 @@ label day5_start_good:
     show mavis
     m "I guess we better get searching then.."
     hide mavis
-
     "Search the camp and talk to everyone."
+    jump search_camp
 
-    show ezra
-    p "Do you remember where you had your sunglasses last?"
-    e "Not really I think I set them on my end table last night? But they were gone this morning…"
-    p "alright I’ll keep looking.."
-    hide ezra
+label search_camp:
+    menu:
+        "Cabins":
+            scene cabin_day
+            show cole
+            p "Hey Cole did you find your journal?"
+            show cole
+            c "Uhm No but it’s fine, I don’t need any help!"
+            p "you’re sure? I think I might’ve seen it over-"
+            show cole
+            c "I SAID ITS FINE! Just leave me alone!"
+            p "Okay damn I’ll leave you be!"
+            hide cole
+            jump search_camp
 
+        "Lake":
+            scene dock
+            jump search_camp
 
-    show zalea
-    show farren
-    p "Where did you guys see your things last"
-    f "(Mimicks is a sleeping pose)"
-    z "Same here, I had it when I went to bed and when I woke up it was gone. No idea where it went."
-    p "I’ll keep looking."
-    hide farren
-    hide zalea
+        "Fire Pit":
+            scene firepit_day
+            show zalea
+            show farren
+            p "Where did you guys see your things last"
+            f "(Mimicks is a sleeping pose)"
+            z "Same here, I had it when I went to bed and when I woke up it was gone. No idea where it went."
+            p "I’ll keep looking."
+            hide farren
+            hide zalea
+            jump search_camp
 
-    show nash
-    show mavis
-    n "I told you Mavis I can’t fix it here!"
-    m "I spent my hard earned money on this car I refuse to believe it’s done for!"
-    n "If I knew where my tools were then I’d at least try to fix the breaks but I don’t so I can’t!"
-    m "Whatever I’m gonna go finish packing!"
-    hide mavis
-    n "HEY WAIT- Mavis-"
-    n "Oh hey player sorry can’t talk right now..You find my tools yet?"
-    p "No not yet sorry Nash."
-    n "No? That’s fine I’m sure we’ll find them."
-    hide nash
+        "Camp entrance":
+            scene camp_entrance
+            show nash
+            show mavis
+            n "I told you Mavis I can’t fix it here!"
+            m "I spent my hard earned money on this car I refuse to believe it’s done for!"
+            n "If I knew where my tools were then I’d at least try to fix the breaks but I don’t so I can’t!"
+            m "Whatever I’m gonna go finish packing!"
+            hide mavis
+            n "HEY WAIT- Mavis-"
+            n "Oh hey player sorry can’t talk right now..You find my tools yet?"
+            p "No not yet sorry Nash."
+            n "No? That’s fine I’m sure we’ll find them."
+            hide nash
+            jump search_camp
 
-    show cole
-    p "Hey Cole did you find your journal?"
-    show cole
-    c "Uhm No but it’s fine, I don’t need any help!"
-    p "you’re sure? I think I might’ve seen it over-"
-    show cole
-    c "I SAID ITS FINE! Just leave me alone!"
-    p "Okay damn I’ll leave you be!"
-    hide cole
-
-    show nash
+        "Meet with group":
+            jump next
+        
+  
+label next:
+    scene cabin_day
+    with fade
+    "You find Nash's tools in a bush in the main camp area"
+    p "Hey Nash! I found your tools!"
+    "Nash comes joggong over and everyone else follows behind."
+    show nash frown at Left
     n "Wait seriously? In a bush?"
-    show mavis
+    show mavis angry at Right
     m "Great the tools, literally everything else is missing though! And my Van is still broken!"
     n "You act as if I’m the one who broke it, which I’m not!"
-    hide mavis
-    hide nash
-    show cole
+    hide mavis angry
+    hide nash frown
+    show cole ng frown at Left
     c "Well you are the Mechanic Nash, what are we supposed to think?"
-    show ezra
+    show ezra concerned at Right
     e "No offence Cole,  but I don’t Nash has the brains to plan something like this!"
-    hide ezra
-    hide cole
-    show nash
+    hide ezra concerned
+    hide cole ng frown
+    show nash frown at Left
     n "See!? Thank you- hey wait a minute did you just call me dumb?"
-    show zalea
+    show zalea judging at Right
     z "You are a little slow sometimes, no offence"
     n "Am not! Mavis tell them I'm not."
-    hide zalea 
-    show mavis
+    hide zalea judging
+    show mavis 
     m "I mean..occasionally.."
     hide mavis
     n "unbelievable!"
@@ -438,6 +457,8 @@ label day5_start_good:
 
     "nash tackles Cole!"
     
+    "Nash knocks Cole out, They find out that it was Cole who killed Jade and find out that he had planned this entire trip to attempt to kill everyone off"
+    "They make their way to the owners Cabin 20 mins away and Cole is arrested and they all make it home safe, (sorry we ran outta time)"
     jump the_end
 
 
