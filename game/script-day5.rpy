@@ -233,7 +233,7 @@ label day5_start_good:
     m "what do you mean tampered with?"
     n "The break lines were cut and it looks like more was done but I can’t be sure."
     hide nash
-    show ezra
+    show ezra concerned
     e "well that’s just fantastic. Can you fix it?"
     hide ezra
     show nash
