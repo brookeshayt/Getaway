@@ -369,7 +369,7 @@ label day2_end:
     show zalea judging flower at Left
     z "Okay, but even expired product wouldn't just kill her..."
     hide zalea judging flower
-    show mavis neutral
+    show mavis neutral at Right
     m "Maybe her stuff was tampered with? But I don't like what that implies..."
     hide mavis neutral
     show nash frown at Left
