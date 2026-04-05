@@ -60,6 +60,9 @@ label start:
     # Show a background. This uses a placeholder by default, but you can
     # add a file (named either "bg room.png" or "bg room.jpg") to the
     # images directory to show it.
+    scene black
+    with fade
+    "Disclaimer: Blood and Death :)"
 
     scene car_on_road
     with fade

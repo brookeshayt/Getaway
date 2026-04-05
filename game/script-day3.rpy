@@ -4,7 +4,6 @@ label day3_start:
     with fade
     "Day 3"
     scene cabin_day 
-    "jump to midday"
     "[player_name] is helping Nash and Mavis around camp"
     show nash smirk at Left
     n "Hey Mav! Pass me that log!"
@@ -35,7 +34,7 @@ label day3_start:
     show cole glasses neutral at Left
     c "I am not l-looking foward to eating later..."
     hide cole glasses neutral
-    show ezra disgusted sunglasses Left
+    show ezra disgusted sunglasses at Left
     e "That makes at least two of us"
     hide ezra sunglasses
     show nash sigh at Left
@@ -70,7 +69,7 @@ label day3_start:
     hide cole shocked closed
     show nash sigh at Left
     n "*slurred voice* Nuh-uh, you're just- jealous of my cooking skills."
-    show ezra concerned sunglasses ar Right
+    show ezra concerned sunglasses at Right
     e "This isn't food posioning. Nash, did you drug the food..?"
     n "h-huh? No, I didn't slug the roof. What-does that-evenmean?"
     e "OOOOOoookaayyyy."
@@ -118,13 +117,11 @@ label day3_nash_dies:
     n "*continues snoring*"
     hide nash sigh
     hide ezra concerned
-    "Nash passes out in his chair and everyone else heads to bed. You were the last to be with Nash but decide to hear to your cabin"
+    "Nash passes out in his chair and everyone else heads to bed. You were the last to be with Nash but decide to head to your cabin"
 
     scene black
     with fade
     "In a half-awake state you hear the sound of a muffled conversation outside. You can hear what you think is Nash's voice but the other voice is too quiet to make out."
-    
-    show nash scared at Left
     n "What... fuck.. you.. doing"
     n "st-STOP- sOMEOne- HEL---"
     n "..."
@@ -135,7 +132,3 @@ label day3_end:
     scene black
     "You and your freinds sleep through the night"
     jump day4_start
-
-    "The End... so far"
-    $ renpy.pause(hard=True)
-    

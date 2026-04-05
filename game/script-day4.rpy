@@ -36,11 +36,12 @@ label farren_death:
     e "people don’t just trip and impale themselves on branches Mavis.."
     hide ezra shocked sunglasses
     show cole shocked at Left
+    hide mavis sad
     c "I don’t understand how this could even happen…"
+    hide cole shocked
     p "You know, I thought I heard something last night. I thought I heard Nash talking to someone outside but I couldn’t make out what they were saying."
     p "I thought I was dreaming, I didn’t think it was real until I woke up and saw him like this."
     p "I couln't even push myself to get out of bed, It was like I was weighted down."
-    hide mavis angry
     show ezra concerned sunglasses at Left
     e "You’re sure..? You didn’t hear anyone else?"
     p "No, I didn't hear anyone else"
@@ -50,13 +51,16 @@ label farren_death:
     show ezra concerned sunglasses at Left
     e "I don’t think player had a choice… I don’t think any of you were sober last night..?"
     hide mavis angry 
-    show cole concerned at Right
+    show cole pupil glasses neutral at Right
     c "w-what do you mean?"
+    hide cole pupil glasses neutral
     e "I mean you were all so drowsy after dinner that I had to practically carry Zalea back to the cabin."
     hide ezra concerned sunglasses
     show mavis neutral at Left
     m "now that you mention it last night was pretty fuzzy and I slept pretty hard. "
+    show cole shocked closed at Right
     c "S-same here."
+    hide cole shocked closed
     hide mavis neutral
     show ezra concerned sunglasses at Left
     e "Someone must’ve tampered with the food….based off everyone’s behaviour I’d say it knocked everyone out."
@@ -100,9 +104,9 @@ label midday_discussion:
             jump day4_end
 
 label ask_ezra:
-    show ezra3 sunglasses at Left
+    show ezra 3 sunglasses at Left
     e "He was my best friend yeah he could be a pain in the ass but he was like a brother to me…we grew up together I can’t believe he’s gone.."
-    hide ezra3 sunglasses
+    hide ezra 3 sunglasses
     jump midday_discussion
 
 label ask_mavis:
@@ -162,6 +166,7 @@ label day4_end:
     hide ezra sunglasses
     show mavis neutral at Left
     m "No clue"
+    hide  mavis neutral
     show cole glasses neutral at Left
     c "I’ve never even touched one"
     hide cole glasses neutral
@@ -212,9 +217,10 @@ label day4_end:
     show mavis shocked at Left
     m "We need to get out of here!"
     hide mavis shocked
-    show zalea angry flower at Left
+    show zalea frustrated flower at Left
     z "Why did we stay!! We should have left by now we should have gone to get help after Jade! Now three of our friends have died."
     z "THis is your fault COLE! It was your stupid idea to come to this rundown camp in the middle of nowhere!"
+    hide zalea frustrated flower
     show cole angry teeth at Left
     c "Hey!! Don’t b-blame me!"
     c "How was I supposed to know everyone would end up dying!"
@@ -247,6 +253,22 @@ label day4_end:
     with fade
     "END OF DAY"
     "You lost two more friends today. Be careful with your choices from here on out."
+
+    scene black
+    with fade
+    "You lost 2 friends today"
+    show nash closeup at Center
+    with fade
+    show nash blank at Center
+    with fade
+    show nash blood at Center
+    with fade
+    show farren closeup at Center
+    with fade
+    show farren blank at Center
+    with fade
+    show farren blood at Center
+    with fade
     jump day5_start_variants
 
 label farren_alive:

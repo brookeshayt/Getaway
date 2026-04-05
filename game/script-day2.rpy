@@ -224,27 +224,25 @@ label jade_chat:
     "Talk to your friends to get their perspectives"
 
 label talk_to_friends:
-    $ interactions_count = 0
     menu:
         "Talk to Zalea":
-            $ interactions_count += 1
             jump zalea_chat
         "Talk to Mavis":
-            $ interactions_count += 1
+
             jump mavis_chat
         "Talk to Nash":
-            $ interactions_count += 1
+
             jump nash_chat
         "Talk to Cole":
-            $ interactions_count += 1
+
             jump cole_chat
         "Talk to Ezra":
-            $ interactions_count += 1
+
             jump ezra_chat
         "Talk to Farren":
-            $ interactions_count += 1
+
             jump farren_chat
-        "Continue with the story" if interactions_count >= 6:
+        "Continue with the story":
             jump day2_end
 
 label zalea_chat:
@@ -252,64 +250,83 @@ label zalea_chat:
     menu:
         "Where were you this morning?":
             z " I was sitting with you guys at the shelter, and I was with Ezra during the search"
+            hide zalea flower
             jump talk_to_friends
         "Do you think it was Ezra?":
             z "God no, Ezra didn’t like her but they wouldn’t have done that."
+            hide zalea flower
             jump talk_to_friends
         "How do you feel about Jade?":
             z "I invited her to come with us because she didn’t have a ton of friends, she could be kind of mean but I didn’t mind having her around."
+            hide zalea flower
             jump talk_to_friends
+   
 
 label mavis_chat:
     show mavis neutral at Left
     menu:
         "Where were you this morning?":
             m "I was making breakfast cause I was the first one awake, and Nash came to help me out a little later. I was checking the campfire with Nash during the search."
+            hide mavis neutral
             jump talk_to_friends
         "Who do you think it was?":
             m "I have no idea, and I don’t want to point any fingers. It’s how you start to lose sight of the real truth."
+            hide mavis neutral
             jump talk_to_friends
         "How do you feel about Jade?":
             m "Jade? She was kind of rude, but she wasn’t all that bad and is actually rather reliable if you could get past her backhanded compliments. She didn’t deserve to die like that."
+            hide mavis neutral
             jump talk_to_friends
+    
 
 label nash_chat:
     show nash frown at Left
     menu:
         "Where were you this morning?":
             n "I was helping Mavis with breakfast after I woke up, and was with you guys afterwards. I was checking by the campfire, during the search."
+            hide nash frown
             jump talk_to_friends
         "Did you see anything at all this morning?":
             n "(shakes head) no I haven’t, sorry. I was too busy helping with breakfast."
+            hide nash frown
             jump talk_to_friends
         "How do you feel about Jade?":
             n "I mean.. she was kind of a bitch, but I didn’t hate her."
+            hide nash frown
             jump talk_to_friends
+   
 
 label cole_chat:
     show cole glasses neutral at Left
     menu:
         "Where were you this morning?":
             c "I-I was with you guys the whole time, I woke up after Farren. And I was checking by the camp entrance during the search."
+            hide cole glasses neutral
             jump talk_to_friends
         "Did you hear or see anything this morning?":
             c "Not-t that I rem-member, there-e was nothing o-out of the ordinary"
+            hide cole glasses neutral
             jump talk_to_friends
         "How do you feel about Jade?":
             c "S-she was kind of rude but I didn’t hate her.. not really. S-she pushed me a-around a lot but no one d-deserves to die."
+            hide cole glasses neutral
             jump talk_to_friends
+    
 
 label ezra_chat:
     show ezra at Left
     menu:
         "Where were you this morning?":
             e "Asleep, as I usually am in the morning. I didn’t kill Jade, I was with Zalea during the search."
+            hide ezra
             jump talk_to_friends
         "Did you hear anything in the area? Considering you were the last one awake.":
             e "No, like I said I was sleeping and no I didn’t see anything when I woke up."
+            hide ezra
             jump talk_to_friends
         "How do you feel about Jade?":
             e "I may not have liked her all that much she used to be really rude to Z, but I wouldn’t risk jail time over something so petty."
+            hide ezra
             jump talk_to_friends
 
 label farren_chat:
@@ -317,13 +334,16 @@ label farren_chat:
     menu:
         "Where were you this morning?":
             f "(stares then nods towards the campfire)"
+            hide farren
             jump talk_to_friends
         " Z said you're quite observant, did you see anything?":
             f "(looks away as if recounting thoughts)"
             "Farren gestures towards Ezra, and mimicking a sleeping pose."
+            hide farren
             jump talk_to_friends
         "How do you feel about Jade?":
             "Farren just shrugs. [player_name] assumes he's neutral on the topic."
+            hide farren
             jump talk_to_friends
 
 label day2_end:
@@ -378,7 +398,7 @@ label day2_end:
     show zalea sad flower at Left
     z "One of us killed her..."
     hide zalea sad flower
-    show mavis frustrated at Left
+    show mavis neutral at Left
     m "If that's the case, we need evidence. I think I saw Jade's makeup by the abandoned cabin, maybe we can find some clues there."
     show farren at Left
     f "(nods)"
@@ -390,7 +410,7 @@ label day2_end:
     z "Well her eyeliner isn’t there, she used it every day so it wouldn’t make sense if she left it behind."
     m "I didn't see anything else by her bag. But how could it have been tampered with?"
     hide zalea judging flower
-    hide mavis frustrated
+    hide maFvis neutral
     show ezra concerned sunglasses at Left
     e "toxins and illnesses can be absorbed into the body through your eyes. It’d have to be a really high dosage though."
     show cole glasses neutral at Right
@@ -416,11 +436,15 @@ label day2_end:
     hide cole glasses neutral
     show zalea judging flower at Left
     z "So we're staying then...?"
+    hide zalea judging flower
     n "Looks like it."
     hide nash frown
+    show zalea judging flower at Left
     z "What do we do about Jade?.."
-    show ezra concerned sunglasses at Left
+    show ezra concerned sunglasses at Right
     e "We should probably bury her, we can't just leave her body out here."
+    hide zalea judging flower
+    hide ezra concerned sunglasses
     "What do you think [player_name]?"
     menu:
         "Agree with Ezra":
@@ -439,4 +463,15 @@ label call_cops:
 label conclusion:
 "Mavis and Ezra go to move Jade and bury her off screen out of respect the group holds a small funeral. Despite some better judgement, the group decides to stay to try and solve this."
 "End of Day 2"
+
+scene black
+with fade
+"You lost a friend today"
+show jade closeup at Center
+with fade
+show jade blank at Center
+with fade
+show jade blood at Center
+with fade
+
 jump day3_start
