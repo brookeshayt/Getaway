@@ -8,12 +8,12 @@ label day3_start:
     show nash smirk at Left
     n "Hey Mav! Pass me that log!"
     show mavis happy at Right
-    m "ONE LOG COMING UP! (throw slog towards nash)"
+    m "ONE LOG COMING UP! (throw's log towards Nash)"
     n "Thanks Mav (sound of axe hitting wood)"
     hide mavis happy
     "Nash looks up at you"
-    n "Help me take these to the picnic shelter for me will yah?"
-    "[player_name] brings the wood to the shelter."
+    n "Help me take these to the firepit for me will yah?"
+    "[player_name] brings the wood to the firepit. the rest of the group is sitting by the fire."
     show mavis happy at Right
     m "There we go all set. Try not to murder us with your cooking this time, huh?"
     show nash sigh at Left
@@ -67,9 +67,9 @@ label day3_start:
     show cole shocked closed at Left
     c "(looks ill) Ezra was right, it really was bad."
     hide cole shocked closed
-    show nash sigh at Left
+    show nash smirk at Left
     n "*slurred voice* Nuh-uh, you're just- jealous of my cooking skills."
-    show ezra concerned sunglasses at Right
+    show ezra concerned sunglasses ar Right
     e "This isn't food posioning. Nash, did you drug the food..?"
     n "h-huh? No, I didn't slug the roof. What-does that-evenmean?"
     e "OOOOOoookaayyyy."
@@ -81,6 +81,7 @@ label day3_start:
     show ezra concerned at Left
     "Ezra looks over at Zalea who is about to fall over, he gives a short sigh"
     e "I’m gonna get this one to bed (Ezra gestures towards Zalea). And then head to bed myself, you good here Nash?"
+    hide ezra concerned
    
     if nash_is_bunkmate:
         jump day3_nash_survives
@@ -99,6 +100,7 @@ label day3_nash_survives:
     e "It's fine, I got this, just tell her I'll be there in a minute."
     hide ezra
     "Cole stands there awkwardly for a moment then nods and heads to his cabin."
+    hide cole neutral
     "You're on one side of Nash and Ezra is on the other. You both carry him back to the cabin."
     show ezra concerned at Left
     e "There we go, idiot would've stayed out there all night.. If you're good here I'm going to head to bed."
@@ -132,3 +134,7 @@ label day3_end:
     scene black
     "You and your freinds sleep through the night"
     jump day4_start
+
+    "The End... so far"
+    $ renpy.pause(hard=True)
+    

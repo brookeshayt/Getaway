@@ -213,6 +213,7 @@ label okay_variant:
             jump van_crash
 
 
+
 label day5_start_good:
     scene cabin_day
     with fade

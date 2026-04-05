@@ -287,9 +287,9 @@ label farren_alive:
     show mavis neutral at Left
     m "I felt really drowsy afterwards..I almost passed out in my chair."
     hide mavis neutral
-    show zalea flower at Left
+    show zalea sad flower at Left
     z "I don’t remember much after I ate dinner…"
-    hide zalea flower
+    hide zalea sad flower
     show ezra concerned sunglasses at Left
     e "…You were pretty out of it too Z."
     hide ezra concerned sunglasses
