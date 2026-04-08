@@ -1214,13 +1214,13 @@ screen item_hotbar_icons():
                             SetVariable("selected_slot", i),
                             If(slot and slot["id"] == "owner note", Show("owner_note_popup")),
                             If(slot and slot["id"] == "bracelet", Show("bracelet_popup")),
-                            If(slot and slot["id"] == "pill bottle", Show("pill_bottle_popup"))
+                            If(slot and slot["id"] == "pill bottle", Show("pill_bottle_popup")),
+                            If(slot and slot["id"] == "cole notebook", Show("cole_notebook_popup")),
+                            If(slot and slot["id"] == "nash toolbox", Show("nash_toolbox_popup"))
                     ]
 
                     if slot:
                         add slot["icon"] xalign 0.5 yalign 0.5 xysize (60, 60)
-
-    
 
 screen owner_note_popup():
     modal True
@@ -1284,6 +1284,48 @@ screen pill_bottle_popup():
             textbutton "Close":
                 xalign 1.0
                 action Hide("pill_bottle_popup")             
+
+screen cole_notebook_popup():
+    modal True
+    zorder 200
+
+    frame:
+        xalign 0.5
+        yalign 0.5
+        xmaximum 1100
+        background "#111d"
+        padding (30, 20)
+
+        vbox:
+            spacing 14
+            text "Cole's Notebook" size 38 color "#047C0E"
+            add "cole notebook" xalign 0.5 yalign 0.5 xysize (520, 520)
+            text "A worn leather notebook filled with scribbled notes and drawings. Some pages are torn out and other pages are a little... weird."
+
+            textbutton "Close":
+                xalign 1.0
+                action Hide("cole_notebook_popup")    
+
+screen nash_toolbox_popup():
+    modal True
+    zorder 200 
+        
+    frame:
+        xalign 0.5
+        yalign 0.5
+        xmaximum 1100
+        background "#111d"
+        padding (30, 20)
+
+        vbox:
+            spacing 14
+            text "Nash's Toolbox" size 38 color "#047C0E"
+            add "nash toolbox" xalign 0.5 yalign 0.5 xysize (520, 520)
+            text "A red toolbox filled with Nash's various tools and supplies. Some items are missing"
+
+            textbutton "Close":
+                xalign 1.0
+                action Hide("nash_toolbox_popup") 
 
 ## Confirm screen ##############################################################
 ##

@@ -257,18 +257,21 @@ label day4_end:
     scene black
     with fade
     "You lost 2 friends today"
+    play sound "audio/death gong.mp3"
+    pause 2
+    stop sound
     show nash closeup at Center
-    with fade
+    pause 2
     show nash blank at Center
-    with fade
+    pause 2
     show nash blood at Center
-    with fade
+    pause 2
     show farren closeup at Center
-    with fade
+    pause 2
     show farren blank at Center
-    with fade
+    pause 2
     show farren blood at Center
-    with fade
+    pause 2
     jump day5_start_variants
 
 label farren_alive:
@@ -341,8 +344,8 @@ label day4_lookaround:
 label group_chat: 
     scene cabin_day
     with fade
-    p "Did you see anything while looking around, Ezra?"
     "Maybe you should talk to a few of your friends. You walk up to everyone and ask them if they found anything while looking around."
+    p "Did you see anything while looking around, Ezra?"
     show ezra concerned sunglasses at Left
     e "Nothing besides a scrap of fabric… no one’s clothes are damaged though.."
     hide ezra concerned sunglasses
@@ -358,8 +361,11 @@ label group_chat:
     "You talk to Farren next, but he doesn't say much.."
     show farren at Left
     f "(Farren is silent for a moment but then hands you an empty pill bottle with the Name scratched out)"
+    show pill bottle at Center
+    show screen item_hotbar_icons
     $ collect_hotbar_item("pill bottle", "images/icons/pill bottle.png")
     f "It’s a prescription bottle for extremely strong sleeping medication"
+    hide pill bottle
     hide farren 
     p "Do you know who takes sleeping meds?"
     show farren at Left
@@ -421,10 +427,12 @@ label meet_up_with_group:
     e "Yeah.. the dumbass could’ve died if he was left out there alone,"
     hide ezra
     show farren at Left
-    f "… (Narrows looks at player expectantly)"
-
-    $ collect_hotbar_item("pill bottle", "images/icons/pill bottle.png")
+    f "… (Narrows looks at [player_name] expectantly)"
+    hide farren
     p "Farren found this near the firepit."
+    show pill bottle at Center
+    pause 1.5
+    hide pill bottle at Center
     show ezra concerned sunglasses at Left
     e "Sleeping medication. And way too strong of a dosage to be for casual use. The name on the label is scratched out."
     hide ezra concerned sunglasses
@@ -436,21 +444,22 @@ label meet_up_with_group:
     hide mavis neutral
     show ezra disgusted sunglasses at Left
     e "I do think it would be wise not to split up but what if one of us is lying…"
-    hide exra disgusted sunglasses
-    show cole ng frown
+    hide ezra disgusted sunglasses
+    show cole ng frown at Left
     c "L- let’s not go there…but if the food really was tampered with whose to say the rest isn’t…"
     hide cole
-    show Zalea frustrated flower at Left
+    show zalea frustrated flower at Left
     z "Cole has a point but we can’t just not eat what the heck do we do instead. "
     hide zalea frustrated flower
     show farren at Left
     f "(Points to the rod resting against a tree)"
+    hide farren
     show nash smile at Right
     n "Awe hell yeah! Farren your with me let’s go get us some fish"
     hide nash smile
-    show cole frown at Right
+    show cole ng frown at Right
     c "You sure Farren? Didn’t Z say you can’t swim..? I could go with Nash instead."
-    hide cole frown
+    hide cole ng frown
     f "(Narrows eyes at Cole and shakes his head)"
     hide farren
     "Farren and Nash go toward the water to catch some fish. "
@@ -460,10 +469,10 @@ label meet_up_with_group:
     "LATER THAT NIGHT"
     scene group_night2_fire
     with fade
-    show zalea flowerat Left
+    show zalea flower at Left
     z "That was far better then last night…"
     show ezra sunglasses at Right
-    e "mmhhmm"
+    e "Mmmhhmm"
     hide zalea flower
     hide ezra sunglasses
     show nash sigh at Left
@@ -476,12 +485,12 @@ label meet_up_with_group:
     c "I don’t know about any of you but I’m really tired… I’m gonna head in."
     hide cole ng frown
     show nash at Left
-    n "Me too,..I think that’s a good plan, sleep off whatever this is."
+    n "Me too.. I think that’s a good plan, sleep off whatever this is."
     hide nash
     show mavis neutral at Left
     m "I agree"
     hide mavis neutral
-    show zalea flower
+    show zalea flower at Left
     z "I think we should probably try and get out of here ASAP like pack up and leave tomorrow morningkind of thing."
     show cole ng frown at Right
     c "I don’t know Z… we still don’t know exactly what happened with Jade…"
@@ -489,6 +498,7 @@ label meet_up_with_group:
     show zalea judging flower at Left
     z "So what I refuse to stay here any longer then necessary!"
     hide cole ng frown
+    hide zalea judging flower
     show ezra sunglasses at Left
     e "I agree with Z here let’s back up and leave tomorrow. And hopefully we can find our stuff.."
     hide ezra sunglasses
@@ -496,15 +506,15 @@ label meet_up_with_group:
     n "yeah… all those in favour of leaving tomorrow say I!"
     hide nash smirk
     "The group collectively says I and agrees to leave"
-    show cole frown at Left
+    show cole ng frown at Left
     c "I guess that’s a fine idea, I just hope we can find my stuff before then.."
-    hide cole frown
+    hide cole ng frown
 
     scene black
     with fade
-    "SUMMARY"
-    "Did someone tamper with the food if so then who..?"
-    "Farren seems to be paying close attention to his surroundings, might be worth talking to him again tomorrow."
+    "SUMMARY:"
+    "Did someone tamper with the food? If so then who..?"
+    "Farren seems to be paying close attention to his surroundings. It might be worth talking to him again tomorrow."
     jump day5_start_good
 
  

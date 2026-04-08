@@ -5,6 +5,8 @@ label day5_start_variants:
     "Day 5"
     "The choice is yours... choose wisely"
 
+    scene camp_entrance
+    with fade
     menu:
         "Spend the morning searching the camp":
             jump okay_variant
@@ -201,8 +203,12 @@ label van_crash:
 
 label okay_variant:
     "You find a bunch of missing items around camp. Including Cole's journal."
+
+    show cole notebook at Center
+    screen item_hotbar_icons
     $ collect_hotbar_item("cole notebook", "images/icons/cole notebook.png")
     "the notebook is missing a page. it must have been the one you found earlier. The page lists a very detailed description of each of your friends and theri habits."
+    hide cole notebook
 
     "You show the group and they suggest a few options. Ezra wants to stick together. Mavis wants to take the van to go get help."
     "What do you do next?"
@@ -223,10 +229,11 @@ label day5_start_good:
     e "No sorry Mavis…I’ll keep an eye out, I can’t find my sunglasses either.."
     hide ezra concerned
     show nash frown at Right
-    n "Oh shoot I forgot I borrowed your keys yesterday sorry Mavis.."
+    n "Oh shoot, I forgot I borrowed your keys yesterday sorry Mavis.."
     m "Why'd you have my keys?"
-    n " noticed your engine bay was and sure enough it was tampered with.."
-    m "what do you mean tampered with?"
+    n "I wanted to top up the oil in the van and noticed the engine bay was a little funky"
+    n "Took a closer look and sure enough it was tampered with.."
+    m "What do you mean tampered with?"
     n "The break lines were cut and it looks like more was done but I can’t be sure."
     hide nash frown
     show ezra concerned at Left
@@ -239,25 +246,25 @@ label day5_start_good:
     hide mavis neutral
     hide nash frown
     show ezra concerned at Right
-    e " well the owner said-"
+    e " Well the owner said-"
     hide ezra
-    show cole glasses neutral at Left
+    show cole ng frown at Left
     c "I’m sure if we find Nash’s tools we can get the van fixed!"
-    hide cole glasses neutral
+    hide cole ng frown
     show nash frown at Left
-    n "I don’t know I mean I could try but the issues seem far more severe than a bit of tinkering."
+    n "I don’t know, I mean I could try, but the issues seem far more severe than a bit of tinkering."
     show zalea judging at Right
-    z "you’re the car guy Nash so I guess we should trust your judgement."
+    z "You’re the car guy Nash, so I guess we should trust your judgement."
     hide nash frown
     hide zalea judging
-    show cole glasses neutral at Left
-    c "speaking of Nash’s tools I can’t seem to find my journal either"
-    hide cole glasses neutral
-    show zalea sad at Right
+    show cole ng frown at Left
+    c "Speaking of Nash’s tools I can’t seem to find my journal either"
+    hide cole ng frown
+    show zalea sad at Left
     z "And my hair flower is also missing."
     hide zalea sad
     show mavis neutral at Right
-    m "My keys are also still, missing unless you still have them Nash."
+    m "My keys... Nash?"
     show nash frown at Left
     n "Right yeah sorry, here you go…"
     m "Thanks, not that it means much considering we’re still stranded"
@@ -272,34 +279,34 @@ label day5_start_good:
     show zalea sad at Right
     z "My hair clip."
     hide zalea sad
-    show cole glasses neutral at Left
+    show cole ng frown at Left
     c "m-my journal but I can look for that on my own…"
-    hide cole glasses neutral
+    hide cole ng frown
     show ezra concerned at Left
     e "Farren? You missing anything"
     show farren nm at Right
     hide ezra concerned
     f "(Points at face aggressively)"
     show nash frown at Left
-    n "What does that mean? your missing your face? wait where's your mask?"
+    n "What does that mean? your missing your face? Wait where's your mask?"
     f "(Sighs exasperated)"
-    n "Ohhhh- that’s what your missing."
+    n "Oohhhh, gotcha."
     f "(Nods)"
     hide nash frown
     hide farren nm
     show ezra concerned at Left
     e "[player_name] are you missing anything?"
     p "No I’m not"
-    e "alright"
+    e "Alright"
     hide ezra concerned
     show mavis disgusted at Right
-    m "I was but we’ve found my keys. No thanks to Nash."
+    m "I was, but we’ve found my keys. No thanks to Nash."
     hide mavis disgusted
     show nash angry at Left
     n "Hey!"
     hide nash angry
-    show cole glasses neutral at Left
-    c "looks like we’re stuck here a bit longer then…"
+    show cole ng frown at Left
+    c "Looks like we’re stuck here a bit longer then…"
     show zalea judging at Right
     z "I guess..you don’t seem all to worried Cole"
     c "Me? I’m sure we’ll figure it out, we’ve survived this long… and now we know the van is broken so we won’t crash"
@@ -308,11 +315,11 @@ label day5_start_good:
     e "Hm"
     hide ezra concerned
     c "Plus, I really wanna find my journal it’s really important.."
-    show zalea
+    show zalea judging at Left
     z "Do you need help looking for it?"
     c "NO!!- I mean I’m sure I can manage you guys have your own stuff to look for"
     hide zalea judging
-    hide cole glasses neutral
+    hide cole ng frown
     show mavis neutral at Left
     m "I guess we better get searching then.."
     hide mavis neutral
@@ -323,15 +330,15 @@ label search_camp:
     menu:
         "Cabins":
             scene cabin_day
-            show cole glasses neutral at Left
+            show cole ng frown at Left
             p "Hey Cole did you find your journal?"
             c "Uhm No but it’s fine, I don’t need any help!"
             p "you’re sure? I think I might’ve seen it over-"
-            hide cole glasses neutral
-            show cole angry mouth at Left
+            hide cole ng frown
+            show cole ng frown Left
             c "I SAID ITS FINE! Just leave me alone!"
             p "Okay damn I’ll leave you be!"
-            hide cole angry mouth
+            hide cole ng frown
             jump search_camp
 
         "Lake":
@@ -367,15 +374,21 @@ label search_camp:
             jump search_camp
 
         "Meet with group":
-            jump next
+            jump day5_next
         
   
-label next:
+label day5_next:
     scene cabin_day
     with fade
     "You find Nash's tools in a bush in the main camp area"
+
+    show nash toolbox at Center
+    show screen item_hotbar_icons
+    $ collect_hotbar_item("nash toolbox", "images/icons/nash toolbox.png")
     p "Hey Nash! I found your tools!"
-    "Nash comes joggong over and everyone else follows behind."
+    "Nash comes jogging over and everyone else follows behind."
+    hide nash toolbox
+
     show nash frown at Left
     n "Wait seriously? In a bush?"
     show mavis angry at Right
@@ -429,7 +442,7 @@ label next:
     c "You mean YOUR friend died, none of us actually liked Jade!"
     show zalea frustrated at Left
     z "That’s not true! sure she could be a little mean but-"
-    show cole ne frown at Left 
+    show cole ng frown at Left 
     c "Really? She’d been nothing but mean to me, Ezra said it themselves that they didn’t like her."
     hide zalea frustrated
     show ezra concerned at Right
