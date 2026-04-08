@@ -94,7 +94,7 @@ label start:
     scene camp_entrance
     with fade
     
-    "Mavis hits the brakes and parks the orange van" 
+    "Mavis hits the brakes and parks the red van" 
     "Alright. We're here."
     show jade upset at Left
     j "Jade gestures with two hands in the air and a sarcastic tone" 
