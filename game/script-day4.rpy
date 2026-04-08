@@ -293,10 +293,12 @@ label farren_alive:
     show ezra concerned sunglasses at Left
     e "…You were pretty out of it too Z."
     hide ezra concerned sunglasses
-    show mavis angry at Left
+    show mavis neutral at Left
     m "maybe it was just a coincidence..?"
     show zalea frustrated flower at Right
     z "Oh so all of us nearly passing out after eating dinner last night was just a happy little accident?"
+    hide mavis neutral
+    show mavis angry at Left
     m "I’m trying not to think about it like that!"
     hide mavis angry
     hide zalea frustrated flower
@@ -313,27 +315,36 @@ label farren_alive:
     c "Yeah that’s a good idea"
     hide cole ng frown
 
-    scene black
-    with fade
+label day4_lookaround:
     menu:
         "Look around the cabins":
-            jump look_cabins
+            scene cabin_day
+            pause 2
+            scene stairs_day
+            pause 2
+            jump day4_lookaround
+        "Look inside the cabins":
+            scene bunkbeds
+            pause 2
+            jump day4_lookaround
         "Look around the firepit":
-            jump look_firepit
+            scene firepit_day
+            pause 2
+            jump day4_lookaround
         "Look around the lake":
-            jump look_lake
-        "Look around the woods":
-            jump look_woods
+            scene dock
+            pause 2
+            jump day4_lookaround
         "Meet up with the group":
-
             jump group_chat
 
 label group_chat: 
+    scene cabin_day
+    with fade
     p "Did you see anything while looking around, Ezra?"
     "Maybe you should talk to a few of your friends. You walk up to everyone and ask them if they found anything while looking around."
     show ezra concerned sunglasses at Left
     e "Nothing besides a scrap of fabric… no one’s clothes are damaged though.."
-    "Player gains a scrap of tan coloured fabric"
     hide ezra concerned sunglasses
     show zalea judging flower at Left
     z "I’ve been pretty down on my luck.. I’ve not got anything, sorry Player."
@@ -342,18 +353,20 @@ label group_chat:
     m "Nothing, but I can’t seem to find my car keys, Cole had them last but he said he put them with my stuff…"
     hide mavis neutral
     show nash frown at Left
-    n "no but my tools seem to be missing out of Mavis’s Van."
-    "You talk to Farren next, but he doesn't same much.. except"
+    n "No but my tools seem to be missing out of Mavis’s Van."
+    hide nash frown
+    "You talk to Farren next, but he doesn't say much.."
     show farren at Left
-    f "(Silent for a moment but then hands you an empty pill bottle with the Name scratched out)"
+    f "(Farren is silent for a moment but then hands you an empty pill bottle with the Name scratched out)"
+    $ collect_hotbar_item("pill bottle", "images/icons/pill bottle.png")
     f "It’s a prescription bottle for extremely strong sleeping medication"
     hide farren 
     p "Do you know who takes sleeping meds?"
     show farren at Left
     f "(Shakes head and shrugs)"
     hide farren 
-    show cole ng frown
-    c "no sorry if anything I’ve been counter productive, I lost my glasses and my notebook.."
+    show cole ng frown at Left
+    c "No sorry if anything I’ve been counter productive, I lost my glasses and my notebook.."
     
     menu:
         "Offer cole help to look for his stuff":
@@ -362,7 +375,7 @@ label group_chat:
             jump wish_cole_luck
 
 label offer_cole_help:
-    p "do you need help looking for them?"
+    p "Do you need help looking for them?"
     c "NO! haha I mean no thanks I’m sure they’ll turn up soon I don’t want anyone else touching my stuff." 
     c "Can’t trust anyone right now yknow..?"
     hide cole ng frown
@@ -370,7 +383,7 @@ label offer_cole_help:
 
 label wish_cole_luck:
     p "Good luck finding them then, I’m gonna go meet up with the group"
-    c "t-thanks I’ll be there in a minute.."
+    c "T-hanks I’ll be there in a minute.."
     hide cole ng frown
     jump meet_up_with_group
 
@@ -407,7 +420,7 @@ label meet_up_with_group:
     show ezra at Left
     e "Yeah.. the dumbass could’ve died if he was left out there alone,"
     hide ezra
-    show farren
+    show farren at Left
     f "… (Narrows looks at player expectantly)"
 
     $ collect_hotbar_item("pill bottle", "images/icons/pill bottle.png")

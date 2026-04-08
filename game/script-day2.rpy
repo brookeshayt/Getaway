@@ -32,7 +32,8 @@ label day2_start:
     show zalea judging flower at Left
     z "*shrugs* Suit yourself."
     hide zalea judging flower
-    "Zalea walks off to her cabin to make her coffee, and you can see her through the window as she makes it. She pulls out her instant coffee contained in a plastic bag, puts a spoonful or two in a mug and adds water. Z seems to be in a good mood, humming to herself as she works."
+    "Zalea walks off to her cabin to make her coffee, and you can see her through the window as she makes it." 
+    "She pulls out her instant coffee contained in a plastic bag, puts a spoonful or two in a mug and adds water. Z seems to be in a good mood, humming to herself as she works."
     show cole glasses neutral at Left
     c "H-has anyone seen Ezra? I thought he would have been u-up by now."
     hide cole glasses neutral
@@ -64,7 +65,9 @@ label day2_midday:
     hide zalea flower
     show mavis neutral at Left
     m "I'll go check the cabins"
+    hide mavis neutral
     "Mavis returns a few minutes later, looking concerned."
+    show mavis neutral at Left
     m "I didn't see her in or near the cabins..."
     hide mavis neutral
     show ezra sunglasses at Left
@@ -128,7 +131,7 @@ label jades_death:
     show mavis sad at Left
     m "*nods* I don't feel a pulse"
     hide mavis sad
-    "Mavis gently closes Jade's eyes, moves here to a nearby tree. The whole group stands in shock."
+    "Mavis gently closes Jade's eyes. The whole group stands in shock."
     show nash frown at Left
     n "Now what?... I mean yeah, she was kind of a bitch but I don't think that warrranted murder."
     hide nash
@@ -203,7 +206,8 @@ label alibi:
     hide zalea judging flower
     jump group
 label silent:
-    show cole glasses neutralat Left
+    p "..."
+    show cole glasses neutral at Left
     c "Y-you ok?"
     hide cole glasses neutral
     show mavis neutral at Left
@@ -356,8 +360,9 @@ label day2_end:
     show zalea frustrated flower at Left
     z "oh I don’t know that she’s DEAD!? And that every single one of you wasn’t keen on her being around…"
     hide zalea frustrated flower 
-    show nash at Left
+    show nash frown at Left
     n "I mean... She was kind of a jerk"
+    hide nash frown
     show mavis angry at Right
     m "That doesn't warrant killing her!!"
     show nash angry at Left
@@ -365,12 +370,12 @@ label day2_end:
     hide nash angry
     hide mavis angry
     show ezra concerned sunglasses at Left
-    e "Let's back track. She wasn’t under the cabin when any of us woke up. So when and how was she moved there." 
+    e "Let's back track. She wasn’t under the cabin when any of us woke up, right? So when, and how was she moved there?" 
     e "We all have a basic understanding about where everyone was, [player_name] found Jade.."
     hide ezra concerned sunglasses
     show zalea judging flower at Left
     z "This is useless, obviously no one would just openly admit to killing anyone."
-    show ezra sunglasses at Right
+    show ezra concerned sunglasses at Right
     e "True.."
     hide zalea judging flower
     hide ezra concerned sunglasses
@@ -382,6 +387,7 @@ label day2_end:
     scene jades_death
     with fade
     show nash frown at Left
+    show ezra concerned sunglasses at Right
     n "So... what do you see?"
     e "Looks like a contact based substance from her makeup.. there’s a burn near her eye that looks pretty severe…"
     hide nash frown
@@ -389,7 +395,7 @@ label day2_end:
     show zalea judging flower at Left
     z "Okay, but even expired product wouldn't just kill her..."
     hide zalea judging flower
-    show mavis neutral at Right
+    show mavis neutral at Left
     m "Maybe her stuff was tampered with? But I don't like what that implies..."
     hide mavis neutral
     show nash frown at Left
@@ -400,17 +406,21 @@ label day2_end:
     hide zalea sad flower
     show mavis neutral at Left
     m "If that's the case, we need evidence. I think I saw Jade's makeup by the abandoned cabin, maybe we can find some clues there."
+    hide mavis neutral
     show farren at Left
     f "(nods)"
     hide farren
     "Mavis comes back holding a bag"
+    show mavis neutral at Left
     m "Z, you know the most about makeup and Jade, why don't you check if anything is off?"
-    show zalea judging flower at Right
+    hide mavis neutral
     "Zalea takes a peek inside the bag"
+    show zalea judging flower at Left
     z "Well her eyeliner isn’t there, she used it every day so it wouldn’t make sense if she left it behind."
+    show mavis neutral at Right
     m "I didn't see anything else by her bag. But how could it have been tampered with?"
     hide zalea judging flower
-    hide maFvis neutral
+    hide mavis neutral
     show ezra concerned sunglasses at Left
     e "toxins and illnesses can be absorbed into the body through your eyes. It’d have to be a really high dosage though."
     show cole glasses neutral at Right
@@ -424,6 +434,7 @@ label day2_end:
     hide cole glasses neutral
     show mavis neutral at Left
     m "This is... a lot to handle. Why don't we take a break for now."
+    hide mavis neutral
     "The group falls silent for the second time today"
     scene black 
     scene jades_death
@@ -449,10 +460,12 @@ label day2_end:
     menu:
         "Agree with Ezra":
             p "Yeah, I think that's the best option for now."
+            jump conclusion
         "Suggest calling the cops":
             jump call_cops
         "Say nothing":
             p "..."
+            jump conclusion
 
 label call_cops:
     scene black
@@ -461,17 +474,19 @@ label call_cops:
     jump conclusion
 
 label conclusion:
-"Mavis and Ezra go to move Jade and bury her off screen out of respect the group holds a small funeral. Despite some better judgement, the group decides to stay to try and solve this."
-"End of Day 2"
+    "Mavis and Ezra go to move Jade and bury her off screen out of respect the group holds a small funeral. Despite some better judgement, the group decides to stay to try and solve this."
+    "End of Day 2"
 
-scene black
-with fade
-"You lost a friend today"
-show jade closeup at Center
-with fade
-show jade blank at Center
-with fade
-show jade blood at Center
-with fade
+    scene black
+    with fade
+    "You lost a friend today"
+    window hide
+    play sound "audio/death gong.mp3" 
+    show jade closeup at Center
+    pause 2
+    show jade blank at Center
+    pause 2
+    show jade blood at Center
+    pause 2
 
-jump day3_start
+    jump day3_start

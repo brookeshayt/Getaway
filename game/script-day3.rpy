@@ -69,17 +69,19 @@ label day3_start:
     hide cole shocked closed
     show nash smirk at Left
     n "*slurred voice* Nuh-uh, you're just- jealous of my cooking skills."
-    show ezra concerned sunglasses ar Right
+    show ezra concerned sunglasses at Right
     e "This isn't food posioning. Nash, did you drug the food..?"
+    hide nash smirk
+    show nash smile at Left
     n "h-huh? No, I didn't slug the roof. What-does that-evenmean?"
     e "OOOOOoookaayyyy."
-    hide nash sigh
+    hide nash smile
     hide ezra concerned sunglasses
     show cole shocked closed at Left
     c "I d-don't feel good, I'm gonna h-head in..."
     hide cole shocked closed
-    show ezra concerned at Left
     "Ezra looks over at Zalea who is about to fall over, he gives a short sigh"
+    show ezra concerned at Left
     e "I’m gonna get this one to bed (Ezra gestures towards Zalea). And then head to bed myself, you good here Nash?"
     hide ezra concerned
    
@@ -113,12 +115,13 @@ label day3_nash_survives:
 label day3_nash_dies:
     $ nash_alive = False
     $ farren_alive = False
-    show nash sigh at Right
+    show nash sigh at Left
     n "yeahyeah...I'll be in in a bit- *snore*"
-    e "alright then."
-    n "*continues snoring*"
     hide nash sigh
+    show ezra concerned at Left
+    e "alright then."
     hide ezra concerned
+    n "*continues snoring*"
     "Nash passes out in his chair and everyone else heads to bed. You were the last to be with Nash but decide to head to your cabin"
 
     scene black

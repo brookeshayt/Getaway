@@ -29,7 +29,9 @@ define gui.show_name = True
 ## Text that is placed on the game's about screen. Place the text between the
 ## triple-quotes, and leave a blank line between paragraphs.
 
-define gui.about = _p("""
+define gui.about = _p(""" Getaway is a visual novel made in NMED 3310-A at the University of Lethbridge by Eveie Nedekjak, Sydnie Porteous and Brooke Thibault.
+
+It surrounds a group of seven freinds (you included) who set out for a camping trip in the woods. Something dangerous lies ahead.
 """)
 
 
