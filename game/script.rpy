@@ -62,6 +62,10 @@ label start:
     # images directory to show it.
     scene black
     with fade
+    "A group of six friends decided that this summmer was going to be one for the books"
+    "AND... You're invited!"
+    "A get a way of sorts"
+    "They're not too sure why they booked a campsite, no one quite likes camping but they found themselves drawn to the forest anyways."
     "Disclaimer: Blood and Death :)"
 
     scene car_on_road
