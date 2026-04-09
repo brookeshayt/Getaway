@@ -1215,7 +1215,7 @@ screen item_hotbar_icons():
                             If(slot and slot["id"] == "owner note", Show("owner_note_popup")),
                             If(slot and slot["id"] == "bracelet", Show("bracelet_popup")),
                             If(slot and slot["id"] == "pill bottle", Show("pill_bottle_popup")),
-                            If(slot and slot["id"] == "cole notebook", Show("cole_notebook_popup")),
+                            If(slot and slot["id"] == "journal page", Show("journal_page_popup")),
                             If(slot and slot["id"] == "nash toolbox", Show("nash_toolbox_popup"))
                     ]
 
@@ -1285,7 +1285,7 @@ screen pill_bottle_popup():
                 xalign 1.0
                 action Hide("pill_bottle_popup")             
 
-screen cole_notebook_popup():
+screen journal_page_popup():
     modal True
     zorder 200
 
@@ -1298,13 +1298,13 @@ screen cole_notebook_popup():
 
         vbox:
             spacing 14
-            text "Cole's Notebook" size 38 color "#047C0E"
-            add "cole notebook" xalign 0.5 yalign 0.5 xysize (520, 520)
-            text "A worn leather notebook filled with scribbled notes and drawings. Some pages are torn out and other pages are a little... weird."
+            text "Journal Page" size 38 color "#047C0E"
+            add "journal page" xalign 0.5 yalign 0.5 xysize (520, 520)
+            text "A slightly worn page with scribbled notes and drawings. The details listed on the page about your friends are a little... weird."
 
             textbutton "Close":
                 xalign 1.0
-                action Hide("cole_notebook_popup")    
+                action Hide("journal_page_popup")    
 
 screen nash_toolbox_popup():
     modal True

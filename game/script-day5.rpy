@@ -179,7 +179,7 @@ label van_crash:
 
     scene black
     with fade
-    "HE FUCKED WITH THE VAN!! I CAN'T STOP."
+    "COLE FUCKED WITH THE VAN!! I CAN'T STOP."
     "Screeeeeeeech. BOOM."
 
     scene blurry_crash
@@ -202,23 +202,97 @@ label van_crash:
     jump the_end
 
 label okay_variant:
-    "You find a bunch of missing items around camp. Including Cole's journal."
+    "You and those that are left spend the mornings searching the camp for your items and any other clues."
+    scene bunkbeds_broken
+    with fade
+    "You search inside an abandoned cabin and find a bunch of missing items. Including a torn journal page."
 
-    show cole notebook at Center
-    screen item_hotbar_icons
-    $ collect_hotbar_item("cole notebook", "images/icons/cole notebook.png")
-    "the notebook is missing a page. it must have been the one you found earlier. The page lists a very detailed description of each of your friends and theri habits."
-    hide cole notebook
+    show journal page at Center
+    show screen item_hotbar_icons
+    $ collect_hotbar_item("journal page", "images/icons/journal page.png")
+    " You find a ripped out page on the ground that lists a very detailed description of each of your friends and their habits."
+    hide journal page
 
-    "You show the group and they suggest a few options. Ezra wants to stick together. Mavis wants to take the van to go get help."
+    "You show the Ezra, Mavis and Zaleas what you found, you all decide to confront Cole about the page."
+    scene cabin_night
+    "Cole is in his cabin packing his things whistling to himself."
+    show cole glasses smirk at Left
+    c "O-oh hey guys! What’s up?"
+    hide cole glasses smirk
+    "Ezra blocks the door and Mavis stands in front of him. Zalea stands near Ezra and player stands with Mavis."
+    "Mavis holds up the paper that player found in Cole’s notebook." 
+    show cole shocked closed at Left
+    c "W-what is that? W-where did you find that."
+    show Mavis angry at Right
+    m "[player_name] said it’s a page from your journal? It’s got some pretty disturbing detailed notes about us."
+    hide Mavis angry
+    hide cole shocked closed
+    show cole shocked at Left
+    c "I-I don’t know what you're talking about…"
+    show ezra disgusted sunglasses at Right
+    e "If you’re telling the truth you won’t mind showing us that journal to prove yourself."
+    c "my journal is private I don’t want people looking in it, is that so wrong?" 
+    hide ezra disgusted sunglasses
+    hide cole shocked
+    show zalea frustrated flower at Left
+    z "It is if you’re some sort of stalker freak! "
+    hide zalea frustrated flower
+    show mavis neutral at Left
+    m "Ez is right though…"
+    m "If you’re innocent, show us the book. The writing won’t match if it’s not yours."
+    hide mavis neutral
+    "Cole tightens his grip on his journal his grip so tight his knuckles turn white" 
+    show cole angry mouth at Left
+    c "Seriously!? Mavis what happened to not pointing fingers..some friends you are.."
+    show mavis angry at Right
+    m "That was before  we had evidence you might be.."
+    hide cole angry mouth
+    hide mavis angry
+    show cole angry at Left
+    c "Might be what? A killer?"
+    show ezra disgusted sunglasses at Right
+    e "Enough Cole! If you're innocent just show us the damn book and we’ll leave you alone. "
+    c "I-I can’t do that, it's embarrassing…"
+    hide cole angry
+    hide ezra disgusted sunglasses
+    "Ezra nods at Mavis and Mavis tackles Cole to the ground and Ezra grabs the book. Ezra opens it" 
+    show cole angry at Left
+    c "H-hey!"
+    hide cole angry
+    show era disgusted sunglasses at Left
+    e "Well that’s not obvious in the slightest…"
+    hide era disgusted sunglasses
+    "Ezra reads the book and their face goes pale and they look physically sick." 
+    "Cole is struggling against Mavis and ends up throwing her off of him and sprints towards the door."
+    "Zalea tries to block the door but Cole pulls a knife on her."
+    show ezra shocked sunglassesat Left
+    e "ZALEA!"
+    hide ezra shocked sunglasses
+    "Cole barely misses her and slashes her side instead, and shoves her out of the way."
+    "Ezra catches her and Mavis scrambles after Cole and tackles him outside. "
+    "Ezra is helping Zalea apply pressure to the wound" 
+    show zalea shocked flower at Right
+    z "Ez…" 
+    show ezra shocked sunglasses at Left
+    e "Just don’t look at it Z" 
+    hide zalea shocked flower
+    hide ezra shocked sunglasses
+ 
+    "Ezra wants to stick together. Mavis wants to take the van to go get help."
     "What do you do next?"
     menu:
         "Stick together and walk to the owners cabin":
-            jump day5_start_good
+            jump day5_okay
         "Send mavis in the van to go get help":
             jump van_crash
 
-
+label day5_okay:
+    scene owners_cabin_night
+    with fade
+    "The group sprints to the owners Cabin with Cole knocked out and slung over Mavis's shoulder."
+    "They explain the situation and the owner is horrified. He calls the authorities and an ambulance immediately." 
+    "Zalea survives and Cole is arrested"
+    jump the_end
 
 label day5_start_good:
     scene cabin_day
@@ -236,6 +310,7 @@ label day5_start_good:
     m "What do you mean tampered with?"
     n "The break lines were cut and it looks like more was done but I can’t be sure."
     hide nash frown
+    hide mavis neutral
     show ezra concerned at Left
     e "well that’s just fantastic. Can you fix it?"
     hide ezra concerned
@@ -245,7 +320,7 @@ label day5_start_good:
     m "So we’re just stuck here then?"
     hide mavis neutral
     hide nash frown
-    show ezra concerned at Right
+    show ezra concerned at Left
     e " Well the owner said-"
     hide ezra
     show cole ng frown at Left
@@ -271,7 +346,7 @@ label day5_start_good:
     hide nash frown
     hide mavis neutral
     show ezra concerned at Left
-    e "right… so whose missing what exactly? I’m missing my sunglasses"
+    e "Right… so whose missing what exactly? I’m missing my sunglasses"
     hide ezra concerned
     show nash frown at Left
     n "Tools"
@@ -280,26 +355,32 @@ label day5_start_good:
     z "My hair clip."
     hide zalea sad
     show cole ng frown at Left
-    c "m-my journal but I can look for that on my own…"
+    c "M-my journal but I can look for that on my own…"
     hide cole ng frown
     show ezra concerned at Left
     e "Farren? You missing anything"
-    show farren nm at Right
+    show farren pupils nm at Right
     hide ezra concerned
     f "(Points at face aggressively)"
     show nash frown at Left
     n "What does that mean? your missing your face? Wait where's your mask?"
+    hide farren pupils nm 
+    show farren scowl nm at Right
     f "(Sighs exasperated)"
+    hide farren scowl nm
     n "Oohhhh, gotcha."
+    show farren nm at Right
     f "(Nods)"
     hide nash frown
     hide farren nm
     show ezra concerned at Left
     e "[player_name] are you missing anything?"
+    hide ezra concerned
     p "No I’m not"
+    show ezra concerned at Left
     e "Alright"
     hide ezra concerned
-    show mavis disgusted at Right
+    show mavis disgusted at Left
     m "I was, but we’ve found my keys. No thanks to Nash."
     hide mavis disgusted
     show nash angry at Left
@@ -315,7 +396,7 @@ label day5_start_good:
     e "Hm"
     hide ezra concerned
     c "Plus, I really wanna find my journal it’s really important.."
-    show zalea judging at Left
+    show zalea judging at Right
     z "Do you need help looking for it?"
     c "NO!!- I mean I’m sure I can manage you guys have your own stuff to look for"
     hide zalea judging
@@ -330,31 +411,32 @@ label search_camp:
     menu:
         "Cabins":
             scene cabin_day
-            show cole ng frown at Left
             p "Hey Cole did you find your journal?"
+            show cole ng frown at Left
             c "Uhm No but it’s fine, I don’t need any help!"
+            hide cole ng frown
             p "you’re sure? I think I might’ve seen it over-"
-            hide cole ng frown
-            show cole ng frown Left
+            show cole ng frown at Left
             c "I SAID ITS FINE! Just leave me alone!"
-            p "Okay damn I’ll leave you be!"
             hide cole ng frown
+            p "Okay. Damn, I’ll leave you be!"
             jump search_camp
 
         "Lake":
             scene dock
+            pause 2
             jump search_camp
 
         "Fire Pit":
             scene firepit_day
+            p "Farren, Zalea, where did you guys see your things last?"
             show farren nm at Left
-            p "Where did you guys see your things last"
             f "(Mimicks is a sleeping pose)"
             show zalea sad at Right
-            z "Same here, I had it when I went to bed and when I woke up it was gone. No idea where it went."
-            p "I’ll keep looking."
+            z "Same here, I had my hair flower when I went to bed and when I woke up it was gone. No idea where it went."
             hide farren nm
             hide zalea sad
+            p "I’ll keep looking."
             jump search_camp
 
         "Camp entrance":
@@ -367,10 +449,14 @@ label search_camp:
             m "Whatever I’m gonna go finish packing!"
             hide mavis disgusted
             n "HEY WAIT- Mavis-"
-            n "Oh hey player sorry can’t talk right now..You find my tools yet?"
-            p "No not yet sorry Nash."
+            hide nash angry
+            show nash sigh at Left
+            n "Oh hey [player_name]. sorry can’t talk right now..You find my tools yet?"
+            hide nash sigh
+            p "No not yet, sorry Nash."
+            show nash sigh at Left
             n "No? That’s fine I’m sure we’ll find them."
-            hide nash
+            hide nash sigh 
             jump search_camp
 
         "Meet with group":
@@ -392,14 +478,14 @@ label day5_next:
     show nash frown at Left
     n "Wait seriously? In a bush?"
     show mavis angry at Right
-    m "Great the tools, literally everything else is missing though! And my Van is still broken!"
+    m "Great the tools. Literally everything else is missing though! And my van is still broken!"
     n "You act as if I’m the one who broke it, which I’m not!"
     hide mavis angry
     hide nash frown
     show cole ng frown at Left
-    c "Well you are the Mechanic Nash, what are we supposed to think?"
+    c "Well you are the mechanic Nash, what are we supposed to think?"
     show ezra concerned at Right
-    e "No offence Cole,  but I don’t Nash has the brains to plan something like this!"
+    e "No offence Cole.. or Nash, but I don’t think Nash has the brains to plan something like this."
     hide ezra concerned
     hide cole ng frown
     show nash frown at Left
@@ -412,26 +498,28 @@ label day5_next:
     show mavis neutral at Left
     m "I mean..occasionally.."
     hide mavis neutral
-    n "unbelievable!"
+    show nash angry at Left
+    n "Unbelievable!"
+    hide nash angry
     show ezra concerned at Right
-    e "anywayssss why don’t we start gathering all our belongings by the van maybe we’ll find our stuff in the process!"
+    e "Anyways, why don’t we start gathering all our belongings by the van. Maybe we’ll find our stuff in the process!"
     hide ezra concerned
     show nash frown at Left
-    n "Yeah whatever."
+    n "Yeah, whatever."
     hide nash frown
     "Nash takes his tools and goes to gather his stuff."
     scene black
     with fade
-    "Group gathers belongings in front of the camp sign but still doesn’t find their belongings"
+    "Group gathers belongings in front of camp, but still haven't found their belongings"
 
     scene camp_entrance
     with fade
 
     show ezra concerned at Left
-    e "seriously? Still nothing?"
+    e "Seriously? Still nothing?"
     hide ezra concerned
     show cole ng frown at Left
-    c "maybe it’s a sign we’re supposed to stay..? find out what happened?"
+    c "M-maybe it’s a sign we’re supposed to stay..? find o-out what happened?"
     hide cole ng frown
     show zalea frustrated at Left
     z "Yeah cause the universe wants us to stay in a camp, YOU invited us too in the middle of no where after one of our friends just died."
@@ -439,26 +527,27 @@ label day5_next:
     show ezra concerned at Left
     e "Z-"
     hide ezra concerned
+    show cole ng frown at Left
     c "You mean YOUR friend died, none of us actually liked Jade!"
-    show zalea frustrated at Left
+    show zalea frustrated at Right
     z "That’s not true! sure she could be a little mean but-"
-    show cole ng frown at Left 
-    c "Really? She’d been nothing but mean to me, Ezra said it themselves that they didn’t like her."
+    c "Really? She’d been nothing but mean to me. Ezra said it themselves that they didn’t like her."
     hide zalea frustrated
+    hide cole ng frown
     show ezra concerned at Right
     e "..."
     hide ezra concerned
-    hide cole ng frown
 
-    "Zalea and Cole start to argue. It starts to get pretty heated."
-    "Zalea screams in frustration and Pushes Cole backwards causing him to stumble backwards and drop his bag, Cole scrambles to gather all of his belongings back into his bag."
-    show ezra concerned at Left
+    "Zalea and Cole start to argue. Ezra stands in the background."
+    "Zalea screams in frustration and pushes Cole backwards causing him to stumble and drop his bag"
+    "Cole scrambles to gather all of his belongings back into his bag."
+    show ezra shocked at Left
     e "Woah! Calm down both of you"
-    hide ezra concerned
+    hide ezra shocked
     show zalea frustrated at Left
     z "He started it!"
     show cole ng frown at Right
-    c "She pushed me! psycho!"
+    c "She pushed me! Psycho!"
     z "who the hell are you calling a psycho! I'll show you-"
     hide cole ng frown
     hide zalea frustrated
@@ -466,15 +555,19 @@ label day5_next:
     "Farren approaches [player_name] looking distressed"
     show farren scowl nm at Left
     f "(Points at face then at Cole's bag)"
-    p "what are you doing?"
+    hide farren scowl nm
+    p "What are you doing?"
+    show farren nm at Left
     f "(sighs frustrated. and goes up to Cole and yanks on his bag trying to pull it open)"
     show cole ng frown at Right
     c " H-Hey! What the hell Farren!"
     hide cole ng frown
     hide farren scowl nm
 
-    "Cole shoves Farren off of him spilling his bag all over the ground revealing all the missing items."
-    "Cole's Journal lands open and reveals some very disturbing notes. and details describing that he planned to kill all his friends"
+    "Cole shoves Farren off of him spilling his bag all over the ground and revealing all his friends missing items."
+    "Zalea's hair clip, Ezra's sunglasses, Farren's mask, Cole's journal..."
+    "Cole's journal lands open on the ground, revealing some very disturbing notes."
+    "His scribbles painted details describing how he had planned to kill all his friends"
 
     show mavis shocked at Left
     m "What the Fuck is that?"
@@ -483,15 +576,15 @@ label day5_next:
     show ezra angry at Left
     e "You- You better start explaining yourself!"
     hide ezra angry
-    show cole ng frown at Right
-    c "You weren't Supposed to see that!"
-    hide cole ng frown
+    show acole nervous at Right
+    c "You weren't supposed to see that!"
+    hide acole nervous
     show zalea frustrated at Left
     z "He has all our stuff!"
     hide zalea frustrated
-    show cole ng frown at Right
+    show acole sideye at Right
     c "This wasn't supposed to happen! you were all supposed to die!"
-    hide cole ng frown
+    hide acole sideye
 
     show nash angry at Left 
     n "Shut up, Freak"
@@ -501,15 +594,21 @@ label day5_next:
     c "(laughing) you were supposed to be next Zalea! Then Ezra!" 
     c "At least you and Ezra would have died together."
     hide acole smile
-    "nash tackles Cole!"
+    "Nash tackles Cole!"
     
-    "Nash knocks Cole out, They find out that it was Cole who killed Jade and find out that he had planned this entire trip to attempt to kill everyone off"
-    "They make their way to the owners Cabin 20 mins away and Cole is arrested and they all make it home safe, (sorry we ran outta time)"
+    "Nash knocks Cole out. He falls to the ground."
+    "Everyone stands in shock, staring at Cole's journal and all their strewn items."
+    "It was Cole who killed Jade and he had plans to kill everyone else."
+    "The rest of the group makes their way to the Owners cabin, lugging Cole along."
+    scene owners cabin
+    "The owner is shocked to see Cole and immediately calls the police. The group explains everything that happened and the police take Cole into custody."
+    "A funeral is held for Jade and the friends go their separate ways."
+    with fade
     jump the_end
 
 
 label the_end:
-    "The End"
+    "The End... so far"
     scene end credits
     with fade
     $ renpy.pause(hard=True)

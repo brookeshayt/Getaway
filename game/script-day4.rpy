@@ -131,9 +131,13 @@ label ask_cole:
 label ask_farren:
     show farren at Left
     f "..."
+    hide farren
     p "You two were pretty close?"
+    show farren at Left
     f "*nods*"
-    p "did you hear anything last night? See anything?"
+    hide farren
+    p "Did you hear anything last night? See anything?"
+    show farren at Left
     f "*shakes head no*"
     hide farren
     jump extra_dialogue
@@ -146,7 +150,7 @@ label extra_dialogue:
     z "Yeah, it’s hard to wrap my head around the fact someone could do something so horrendous."
     hide zalea sad flower
     show ezra concerned sunglasses at Left
-    e "yeah…I don’t want to talk about this anymore."
+    e "Yeah…I don’t want to talk about this anymore."
     e "I need some space…"
     hide ezra concerned sunglasses
     jump day4_end
@@ -156,7 +160,7 @@ label day4_end:
     with fade
     scene group_day3_fire
     show mavis neutral at Left
-    m "what are we gonna do about cooking.. if the food is tampered with whose to say the rest of it isn’t "
+    m "What are we gonna do about cooking.. if the food is tampered with whose to say the rest of it isn’t "
     hide mavis neutral
     show farren at Left
     f "(Points to lake and a fishing rod against the tree)"
@@ -195,7 +199,7 @@ label day4_end:
 
     scene black
     with fade
-    "The group splits up while Farren catches Fish. Except he doesn’t come back, it is now dark outside."
+    "The group splits up while Farren catches Fish. Except he hasn't come backyet, it's starting to get dark outside."
     scene group_night3_fire
     show mavis neutral at Left
     m "Do you think he’s caught anything by now?"
@@ -206,6 +210,7 @@ label day4_end:
 
     scene farren_death
     with fade
+    window hide
     "Farren's body is submerged in the water by the shoreline."  
     show zalea shocked flower at Left
     z "Oh my god.. FARREN!!"
@@ -242,6 +247,7 @@ label day4_end:
     "You agree"
     "Cole and Mavis help Ezra move Farren."
 
+    window show
     scene dock_night
     with fade
     "You sit with Zalea and try to comfort her"
@@ -350,7 +356,7 @@ label group_chat:
     e "Nothing besides a scrap of fabric… no one’s clothes are damaged though.."
     hide ezra concerned sunglasses
     show zalea judging flower at Left
-    z "I’ve been pretty down on my luck.. I’ve not got anything, sorry Player."
+    z "I’ve been pretty down on my luck.. I’ve not got anything, sorry [player_name]."
     hide zalea judging flower
     show mavis neutral at Left
     m "Nothing, but I can’t seem to find my car keys, Cole had them last but he said he put them with my stuff…"

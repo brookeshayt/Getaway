@@ -116,10 +116,10 @@ label day3_nash_dies:
     $ nash_alive = False
     $ farren_alive = False
     show nash sigh at Left
-    n "yeahyeah...I'll be in in a bit- *snore*"
+    n "Yeahyeah...I'll be in in a bit- *snore*"
     hide nash sigh
     show ezra concerned at Left
-    e "alright then."
+    e "Alright then."
     hide ezra concerned
     n "*continues snoring*"
     "Nash passes out in his chair and everyone else heads to bed. You were the last to be with Nash but decide to head to your cabin"
@@ -137,7 +137,4 @@ label day3_end:
     scene black
     "You and your freinds sleep through the night"
     jump day4_start
-
-    "The End... so far"
-    $ renpy.pause(hard=True)
     
